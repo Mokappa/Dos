@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: url('./winterTheme.png');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: rgba(150, 140, 196, 0.774);
+    font-family: Helvetica, sans-serif;
+}
+
+/* Player's Hand */
+.playersHand {
+    display: flex;
+    justify-content: center;
+}
+
+/* 1 Card */
+#firstCard {
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    bottom: 15px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    margin-right: 400px;
+    z-index: 2;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateZ(-3deg);
+    cursor: pointer;
+    transition: bottom 0.25s, margin 0.5s, transform 0.5s;
+}
+
+#firstCard:hover {
+    bottom: 100px;
+}
+
+#firstCardInterior {
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(255, 154, 1),rgb(190, 95, 6));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#firstCardInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;
+    
+}
+
+/* 2 Card */
+#secondCard {
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    bottom: 20px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    margin-right: 200px;
+    z-index: 2;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateZ(-2deg);
+    transition: bottom 0.25s, margin 0.5s, transform 0.5s;
+    cursor: pointer;
+}
+
+#secondCard:hover {
+    bottom: 100px;
+}
+
+#secondCardInterior {
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(17, 85, 0),rgb(11, 54, 0));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#secondCardInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;
+    
+}
+
+/* 3 Card */
+#thirdCard {
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    bottom: 23px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    z-index: 3;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateZ(-1deg);
+    transition: bottom 0.25s, margin 0.5s, transform 0.5s;
+    cursor: pointer;
+}
+
+#thirdCard:hover {
+    bottom: 100px;
+}
+
+#thirdCardInterior {
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(19, 0, 192),rgb(13, 0, 133));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#thirdCardInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;
+}
+
+/* 4 Card */
+#fourthCard {
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    bottom: 22px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    margin-left: 200px;
+    z-index: 4;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateZ(2deg);
+    transition: bottom 0.25s, margin 0.5s, transform 0.5s;
+    cursor: pointer;
+}
+
+#fourthCard:hover {
+    bottom: 100px;
+}
+
+#fourthCardInterior {
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(138, 0, 119),rgb(92, 0, 80));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fourthCardInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;
+    
+}
+
+/* 5 Card */
+#fifthCard {
+    height: 250px;
+    width: 150px;
+    position: absolute;
+    bottom: 17px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    margin-left: 400px;
+    z-index: 5;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateZ(3deg);
+    transition: bottom 0.25s, margin 0.5s, transform 0.5s;
+    cursor: pointer;
+}
+
+#fifthCard:hover {
+    bottom: 100px;
+}
+
+#fifthCardInterior {
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(163, 11, 0),rgb(124, 8, 0));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fifthCardInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;
+}
+
+
+
+
+/*  */

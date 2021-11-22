@@ -1,0 +1,99 @@
+/* Reset Cards */
+#resetGameCard {
+    height: 230px;
+    width: 150px;
+    position: absolute;
+    right: 250px;
+    top: 500px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateX(65deg) rotateZ(40deg);
+    cursor: pointer;
+}
+
+#resetGameCard:hover #resetGameCardInterior {
+    background-color: rgba(214, 85, 182, 0.5);
+}
+
+#resetGameCard p {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#resetGameCardInterior {
+    height: 200px;
+    width: 130px;
+    background-color: rgb(214, 85, 182);
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease-in-out;
+}
+
+#resetGameCardInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;
+}
+
+#resetGameCard2 {
+    height: 230px;
+    width: 150px;
+    position: absolute;
+    right: 250px;
+    top: 504px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateX(65deg) rotateZ(40deg);
+    z-index: -1;
+}
+
+#resetGameCardInterior2 {
+    height: 200px;
+    width: 130px;
+    background-color: rgb(214, 85, 182);
+    border-radius: 40px 20px 40px 20px;
+}
+
+#resetGameCard3 {
+    height: 230px;
+    width: 150px;
+    position: absolute;
+    right: 250px;
+    top: 508px;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid white;
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateX(65deg) rotateZ(40deg);
+    z-index: -2;
+}
+
+#resetGameCardInterior3 {
+    height: 200px;
+    width: 130px;
+    background-color: rgb(214, 85, 182);
+    border-radius: 40px 20px 40px 20px;
+}
