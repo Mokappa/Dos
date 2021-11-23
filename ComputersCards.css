@@ -27,30 +27,15 @@
 #firstCardCompInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(19, 0, 192),rgb(13, 0, 133));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#firstCardCompInterior:after {
-    content: '';
-    height: 125px;
-    width: 200px;
-    border: 2px solid white;
-    border-radius: 70% 30% 70% 30%;
-}
-
-#firstCardComp p {
-    position: absolute;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: default;
+#firstCardCompInterior img {
+    width: 100%;
 }
 
 /* 2 Card */
@@ -76,31 +61,15 @@
 #secondCardCompInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(255, 154, 1),rgb(190, 95, 6));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#secondCardCompInterior:after {
-    content: '';
-    height: 125px;
-    width: 200px;
-    border: 2px solid white;
-    border-radius: 70% 30% 70% 30%;
-    
-}
-
-#secondCardComp p {
-    position: absolute;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: default;
+#secondCardCompInterior img {
+    width: 100%;
 }
 
 /* 3 Card */
@@ -125,30 +94,15 @@
 #thirdCardCompInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(138, 0, 119),rgb(92, 0, 80));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#thirdCardCompInterior:after {
-    content: '';
-    height: 125px;
-    width: 200px;
-    border: 2px solid white;
-    border-radius: 70% 30% 70% 30%;
-}
-
-#thirdCardComp p {
-    position: absolute;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: default;
+#thirdCardCompInterior img {
+    width: 100%;
 }
 
 /* 4 Card */
@@ -174,31 +128,15 @@
 #fourthCardCompInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(163, 11, 0),rgb(124, 8, 0));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#fourthCardCompInterior:after {
-    content: '';
-    height: 125px;
-    width: 200px;
-    border: 2px solid white;
-    border-radius: 70% 30% 70% 30%;
-    
-}
-
-#fourthCardComp p {
-    position: absolute;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: default;
+#fourthCardCompInterior img {
+    width: 100%;
 }
 
 /* 5 Card */
@@ -224,28 +162,155 @@
 #fifthCardCompInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(17, 85, 0),rgb(11, 54, 0));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#fifthCardCompInterior:after {
+#fifthCardCompInterior img {
+    width: 100%;
+}
+
+
+/* Card Computer Backs */
+/* 1 Card */
+#firstCardCompBackInterior {
+    position: absolute;
+    z-index: -30;
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-1px);
+}
+
+#firstCardCompBackInterior img {
+    width: 40%;
+    position: absolute;
+}
+
+#firstCardCompBackInterior:after {
     content: '';
     height: 125px;
     width: 200px;
     border: 2px solid white;
-    border-radius: 70% 30% 70% 30%;
+    border-radius: 70% 30% 70% 30%;   
 }
 
-#fifthCardComp p {
+/* 2 Card */
+#secondCardCompBackInterior {
     position: absolute;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: default;
+    z-index: -30;
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-1px);
+}
+
+#secondCardCompBackInterior img {
+    width: 50%;
+    position: absolute;
+}
+
+#secondCardCompBackInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;   
+}
+
+/* 3 Card */
+#thirdCardCompBackInterior {
+    position: absolute;
+    z-index: -30;
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-1px);
+}
+
+#thirdCardCompBackInterior img {
+    width: 40%;
+    position: absolute;
+}
+
+#thirdCardCompBackInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;   
+}
+
+/* 4 Card */
+#fourthCardCompBackInterior {
+    position: absolute;
+    z-index: -30;
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-1px);
+}
+
+#fourthCardCompBackInterior img {
+    width: 50%;
+    position: absolute;
+}
+
+#fourthCardCompBackInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;   
+}
+
+/* 5 Card */
+#fifthCardCompBackInterior {
+    position: absolute;
+    z-index: -30;
+    height: 230px;
+    width: 130px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    border-radius: 40px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-1px);
+}
+
+#fifthCardCompBackInterior img {
+    width: 60%;
+    position: absolute;
+}
+
+#fifthCardCompBackInterior:after {
+    content: '';
+    height: 125px;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 70% 30% 70% 30%;   
 }

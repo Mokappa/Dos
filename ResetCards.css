@@ -14,10 +14,11 @@
     transform-style: preserve-3d;
     transform: rotateX(65deg) rotateZ(40deg);
     cursor: pointer;
+    transition: all 0.25s ease-in-out;
 }
 
-#resetGameCard:hover #resetGameCardInterior {
-    background-color: rgba(214, 85, 182, 0.5);
+#resetGameCard:hover {
+    filter: brightness(60%)
 }
 
 #resetGameCard p {
@@ -33,12 +34,11 @@
 #resetGameCardInterior {
     height: 200px;
     width: 130px;
-    background-color: rgb(214, 85, 182);
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.25s ease-in-out;
 }
 
 #resetGameCardInterior:after {
@@ -69,7 +69,7 @@
 #resetGameCardInterior2 {
     height: 200px;
     width: 130px;
-    background-color: rgb(214, 85, 182);
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
 }
 
@@ -94,6 +94,6 @@
 #resetGameCardInterior3 {
     height: 200px;
     width: 130px;
-    background-color: rgb(214, 85, 182);
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
 }

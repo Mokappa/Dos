@@ -42,11 +42,16 @@ body {
 #firstCardInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(255, 154, 1),rgb(190, 95, 6));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#firstCardInterior img {
+    width: 50%;
+    position: absolute;
 }
 
 #firstCardInterior:after {
@@ -55,7 +60,6 @@ body {
     width: 200px;
     border: 2px solid white;
     border-radius: 70% 30% 70% 30%;
-    
 }
 
 /* 2 Card */
@@ -82,11 +86,16 @@ body {
 #secondCardInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(17, 85, 0),rgb(11, 54, 0));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#secondCardInterior img {
+    width: 30%;
+    position: absolute;
 }
 
 #secondCardInterior:after {
@@ -94,8 +103,7 @@ body {
     height: 125px;
     width: 200px;
     border: 2px solid white;
-    border-radius: 70% 30% 70% 30%;
-    
+    border-radius: 70% 30% 70% 30%;   
 }
 
 /* 3 Card */
@@ -121,11 +129,16 @@ body {
 #thirdCardInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(19, 0, 192),rgb(13, 0, 133));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#thirdCardInterior img {
+    width: 50%;
+    position: absolute;
 }
 
 #thirdCardInterior:after {
@@ -160,11 +173,16 @@ body {
 #fourthCardInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(138, 0, 119),rgb(92, 0, 80));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#fourthCardInterior img {
+    width: 60%;
+    position: absolute;
 }
 
 #fourthCardInterior:after {
@@ -199,11 +217,16 @@ body {
 #fifthCardInterior {
     height: 230px;
     width: 130px;
-    background: radial-gradient(rgb(163, 11, 0),rgb(124, 8, 0));
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
     border-radius: 40px 20px 40px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#fifthCardInterior img {
+    width: 40%;
+    position: absolute;
 }
 
 #fifthCardInterior:after {
