@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform: rotateZ(2deg) scale(0.6);
+    transform: rotateZ(3deg) scale(0.6);
     transition: top 0.5s, margin 0.5s, transform 0.5s;
 }
 
@@ -69,7 +69,7 @@
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform: rotateZ(1deg) scale(0.6);
+    transform: rotateZ(2deg) scale(0.6);
     transition: top 0.5s, margin 0.5s, transform 0.5s;
 }
 
@@ -167,7 +167,7 @@
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform: rotateZ(-1deg) scale(0.6);
+    transform: rotateZ(-2deg) scale(0.6);
     transition: top 0.5s, margin 0.5s, transform 0.5s;
 }
 
@@ -201,7 +201,6 @@
     cursor: default;
 }
 
-
 /* 5 Card */
 #fifthCardComp {
     height: 250px;
@@ -218,7 +217,7 @@
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform: rotateZ(-2deg) scale(0.6);
+    transform: rotateZ(-3deg) scale(0.6);
     transition: top 0.5s, margin 0.5s, transform 0.5s;
 }
 

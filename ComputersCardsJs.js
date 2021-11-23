@@ -36,7 +36,6 @@ function putOnBoardCardComputer() {
     cardCompChoose[cardCompChooseIndex].style.zIndex = cardIndex
     ++ cardIndex
 
-    const indexRemove = cardCompChoose.indexOf(cardCompChoose[cardCompChooseIndex]);
-    
-    cardCompChoose.splice(indexRemove, 1);
+    const indexRemove = cardCompChoose.indexOf(cardCompChoose[cardCompChooseIndex])
+    cardCompChoose.splice(indexRemove, 1)
 }

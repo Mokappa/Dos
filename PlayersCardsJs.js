@@ -4,14 +4,7 @@ let card2 = document.querySelector('#secondCard')
 let card3 = document.querySelector('#thirdCard')
 let card4 = document.querySelector('#fourthCard')
 let card5 = document.querySelector('#fifthCard')
-let resetCard = document.querySelector('#resetGameCard')
-
-// Test if player's cards are on board
-let card1OnBoard = false
-let card2OnBoard = false
-let card3OnBoard = false
-let card4OnBoard = false
-let card5OnBoard = false
+let cardPlayerChoose = [card1, card2, card3, card4, card5]
 
 // Computer's Cards
 let cardComp1 = document.querySelector('#firstCardComp')
@@ -21,11 +14,8 @@ let cardComp4 = document.querySelector('#fourthCardComp')
 let cardComp5 = document.querySelector('#fifthCardComp')
 let cardCompChoose = [cardComp1, cardComp2, cardComp3, cardComp4, cardComp5]
 
-// Test if computer's cards are on board
-let card1CompOnBoard = false
-let card2CompOnBoard = false
-let card3CompOnBoard = false
-let card4CompOnBoard = false
+// Reset Card
+let resetCard = document.querySelector('#resetGameCard')
 
 // Timer delay for computer
 let computerDelay
@@ -35,283 +25,167 @@ let cardIndex = 0
 let marginRandom
 
 
-// Put the Cards on the board
-card1.addEventListener('click', function putOnBoardCard1() {
+// Adding the onclick + hover function
+// Card1
+function OsaMearga() {
+    hoverToRight(card1, cardPlayerChoose)
+}
+
+function OsaMearga2() {
+    hoverBack(card1, cardPlayerChoose)
+}
+
+card1.addEventListener('mouseover', OsaMearga)
+card1.addEventListener('mouseout', OsaMearga2) 
+
+card1.addEventListener('click', function functionToRemove() {
+    card1.removeEventListener('mouseover', OsaMearga)
+    card1.removeEventListener('mouseout', OsaMearga2)
+
+    putOnBoardCard(card1, functionToRemove)
+})
+
+// Card2
+function OsaMearga3() {
+    hoverToRight(card2, cardPlayerChoose)
+}
+
+function OsaMearga4() {
+    hoverBack(card2, cardPlayerChoose)
+}
+
+card2.addEventListener('mouseover', OsaMearga3)
+card2.addEventListener('mouseout', OsaMearga4) 
+
+card2.addEventListener('click', function functionToRemove2() {
+    card2.removeEventListener('mouseover', OsaMearga3)
+    card2.removeEventListener('mouseout', OsaMearga4)
+
+    putOnBoardCard(card2, functionToRemove2)
+})
+
+// Card3
+function OsaMearga5() {
+    hoverToRight(card3, cardPlayerChoose)
+}
+
+function OsaMearga6() {
+    hoverBack(card3, cardPlayerChoose)
+}
+
+card3.addEventListener('mouseover', OsaMearga5)
+card3.addEventListener('mouseout', OsaMearga6) 
+
+card3.addEventListener('click', function functionToRemove3() {
+    card3.removeEventListener('mouseover', OsaMearga5)
+    card3.removeEventListener('mouseout', OsaMearga6)
+    putOnBoardCard(card3, functionToRemove3)
+})
+
+// Card4
+function OsaMearga7() {
+    hoverToRight(card4, cardPlayerChoose)
+}
+
+function OsaMearga8() {
+    hoverBack(card4, cardPlayerChoose)
+}
+
+card4.addEventListener('mouseover', OsaMearga7)
+card4.addEventListener('mouseout', OsaMearga8) 
+
+card4.addEventListener('click', function functionToRemove4() {
+    card4.removeEventListener('mouseover', OsaMearga7)
+    card4.removeEventListener('mouseout', OsaMearga8)
+    putOnBoardCard(card4, functionToRemove4)
+})
+
+// Card5
+function OsaMearga9() {
+    hoverToRight(card5, cardPlayerChoose)
+}
+
+function OsaMearga10() {
+    hoverBack(card5, cardPlayerChoose)
+}
+
+card5.addEventListener('mouseover', OsaMearga9)
+card5.addEventListener('mouseout', OsaMearga10) 
+
+card5.addEventListener('click', function functionToRemove5() {
+    card5.removeEventListener('mouseover', OsaMearga9)
+    card5.removeEventListener('mouseout', OsaMearga10)
+    putOnBoardCard(card5, functionToRemove5)
+})
+
+
+// Putting the card on board
+function putOnBoardCard(selectedCardBoard, removeFunction) {
+    selectedCardBoard.removeEventListener('click', removeFunction)
     marginRandom = randomNumberInt(350, 400)
-    card1OnBoard = true;
 
-    card1.style.bottom = marginRandom + 'px'
-    card1.style.marginRight = '0'
-    card1.style.cursor = 'default'
-    transformThePlayerCard(card1, randomNumberInt(1, 5))
+    selectedCardBoard.style.bottom = marginRandom + 'px'
+    selectedCardBoard.style.margin = '0'
+    selectedCardBoard.style.cursor = 'default'
+    transformThePlayerCard(selectedCardBoard, randomNumberInt(1, 5))
 
-    card1.removeEventListener('click', putOnBoardCard1)
-
-    card1.style.zIndex = cardIndex
+    selectedCardBoard.style.zIndex = cardIndex
     ++ cardIndex
 
-    computerDelay = randomNumberInt(250, 1000)
+    // Remove the card from the player's hand
+    const indexReemove = cardPlayerChoose.indexOf(selectedCardBoard)
+    cardPlayerChoose.splice(indexReemove, 1)
+
+    // Formatting the player's hand
+    formattingCards(cardPlayerChoose)
+
+    // Disabling the player's hand
+    for(let i = 0; i < cardPlayerChoose.length; ++ i) {
+        cardPlayerChoose[i].style.filter = 'brightness(60%)'
+        cardPlayerChoose[i].style.pointerEvents = 'none'
+    }
+
+    computerDelay = randomNumberInt(1000, 1500)
     setTimeout(putOnBoardCardComputer, computerDelay)
-})
 
-card2.addEventListener('click', function putOnBoardCard2() {
-    marginRandom = randomNumberInt(350, 400)
-    card2OnBoard = true;
-
-    card2.style.bottom = marginRandom + 'px'
-    card2.style.marginRight = '0'
-    card2.style.cursor = 'default'
-    transformThePlayerCard(card2, randomNumberInt(1, 5))
-
-    card2.removeEventListener('click', putOnBoardCard2)
-
-    card2.style.zIndex = cardIndex
-    ++ cardIndex
-
-    computerDelay = randomNumberInt(250, 1000)
-    setTimeout(putOnBoardCardComputer, computerDelay)
-})
-
-card3.addEventListener('click', function putOnBoardCard3() {
-    marginRandom = randomNumberInt(350, 400)
-    card3OnBoard = true;
-
-    card3.style.bottom = marginRandom + 'px'
-    card3.style.marginRight = '0'
-    card3.style.cursor = 'default'
-    transformThePlayerCard(card3, randomNumberInt(1, 5))
-
-    card3.removeEventListener('click', putOnBoardCard3)
-
-    card3.style.zIndex = cardIndex
-    ++ cardIndex
-
-    computerDelay = randomNumberInt(250, 1000)
-    setTimeout(putOnBoardCardComputer, computerDelay)
-})
-
-card4.addEventListener('click', function putOnBoardCard4() {
-    marginRandom = randomNumberInt(350, 400)
-    card4OnBoard = true;
-
-    card4.style.bottom = marginRandom + 'px'
-    card4.style.marginLeft = '0'
-    card4.style.cursor = 'default'
-    transformThePlayerCard(card4, randomNumberInt(1, 5))
-
-    card4.removeEventListener('click', putOnBoardCard4)
-
-    card4.style.zIndex = cardIndex
-    ++ cardIndex
-
-    computerDelay = randomNumberInt(250, 1000)
-    setTimeout(putOnBoardCardComputer, computerDelay)
-})
-
-card5.addEventListener('click', function putOnBoardCard5() {
-    marginRandom = randomNumberInt(350, 400)
-    card5OnBoard = true;
-
-    card5.style.bottom = marginRandom + 'px'
-    card5.style.marginLeft = '0'
-    card5.style.cursor = 'default'
-    transformThePlayerCard(card5, randomNumberInt(1, 5))
-
-    card5.removeEventListener('click', putOnBoardCard5)
-
-    card5.style.zIndex = cardIndex
-    ++ cardIndex
-
-    computerDelay = randomNumberInt(250, 1000)
-    setTimeout(putOnBoardCardComputer, computerDelay)
-})
+    // Enabling the player's hand
+    setTimeout(function () {
+        for(let i = 0; i < cardPlayerChoose.length; ++ i) {
+            cardPlayerChoose[i].style.filter = 'brightness(100%)'
+            cardPlayerChoose[i].style.pointerEvents = 'auto'
+        }
+    }, computerDelay + 1000)
+}
 
 
-// Moving animation when hovering
-// Hovering Card1
-card1.addEventListener('mouseover', function () {
-    if(!card2OnBoard) {
-        card2.style.marginLeft = '50px'
+// Hover Animation
+function hoverToRight(selectedCardHover, theArray) {
+    selectedCardHover.style.bottom = '100px'
+    selectedCardHover.style.zIndex = 999
+}
+
+function hoverBack(selectedCardHover, theArray) {
+    if(selectedCardHover === card1) {
+        selectedCardHover.style.bottom = '17px'
+        selectedCardHover.style.zIndex = 1
     }
-
-    if(!card3OnBoard) {
-        card3.style.marginLeft = '50px'
+    else if(selectedCardHover === card2) {
+        selectedCardHover.style.bottom = '20px'
+        selectedCardHover.style.zIndex = 2
     }
-
-    if(!card4OnBoard) {
-        card4.style.marginLeft = '250px'
+    else if(selectedCardHover === card3) {
+        selectedCardHover.style.bottom = '23px'
+        selectedCardHover.style.zIndex = 3
     }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '450px'
+    else if(selectedCardHover === card4) {
+        selectedCardHover.style.bottom = '20px'
+        selectedCardHover.style.zIndex = 4
     }
-})
-
-card1.addEventListener('mouseout', function () {
-    if(!card2OnBoard) {
-        card2.style.marginLeft = '0px'
+    else if(selectedCardHover === card5) {
+        selectedCardHover.style.bottom = '17px'
+        selectedCardHover.style.zIndex = 5
     }
-
-    if(!card3OnBoard) {
-        card3.style.marginLeft = '0px'
-    }
-
-    if(!card4OnBoard) {
-        card4.style.marginLeft = '200px'
-    }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '400px'
-    }
-})
-
-// Hovering Card2
-card2.addEventListener('mouseover', function () {
-    if(!card1OnBoard) {
-        card1.style.marginRight = '450px'
-    }
-
-    if(!card3OnBoard) {
-        card3.style.marginLeft = '50px'
-    }
-
-    if(!card4OnBoard) {
-        card4.style.marginLeft = '250px'
-    }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '450px'
-    }
-})
-
-card2.addEventListener('mouseout', function () {
-    if(!card1OnBoard) {
-        card1.style.marginRight = '400px'
-    }
-
-    if(!card3OnBoard) {
-        card3.style.marginLeft = '0px'
-    }
-
-    if(!card4OnBoard) {
-        card4.style.marginLeft = '200px'
-    }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '400px'
-    }
-})
-
-// Hovering Card3
-card3.addEventListener('mouseover', function () {
-    if(!card2OnBoard) {
-        card2.style.marginRight = '250px'
-    }
-
-    if(!card1OnBoard) {
-        card1.style.marginRight = '450px'
-    }
-
-    if(!card4OnBoard) {
-        card4.style.marginLeft = '250px'
-    }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '450px'
-    }
-})
-
-card3.addEventListener('mouseout', function () {
-    if(!card2OnBoard) {
-        card2.style.marginRight = '200px'
-    }
-
-    if(!card1OnBoard) {
-        card1.style.marginRight = '400px'
-    }
-
-    if(!card4OnBoard) {
-        card4.style.marginLeft = '200px'
-    }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '400px'
-    }
-})
-
-// Hovering Card4
-card4.addEventListener('mouseover', function () {
-    if(!card2OnBoard) {
-        card2.style.marginRight = '250px'
-    }
-    
-    if(!card3OnBoard) {
-        card3.style.marginRight = '50px'
-    }
-
-    if(!card1OnBoard) {
-        card1.style.marginRight = '450px'
-    }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '450px'
-    }
-})
-
-card4.addEventListener('mouseout', function () {
-    if(!card2OnBoard) {
-        card2.style.marginRight = '200px'
-    }
-    
-    if(!card3OnBoard) {
-        card3.style.marginRight = '0px'
-    }
-
-    if(!card1OnBoard) {
-        card1.style.marginRight = '400px'
-    }
-
-    if(!card5OnBoard) {
-        card5.style.marginLeft = '400px'
-    }
-})
-
-// Hovering Card5
-card5.addEventListener('mouseover', function () {
-    if(!card2OnBoard) {
-        card2.style.marginRight = '250px'
-    }
-
-    if(!card3OnBoard) {
-        card3.style.marginRight = '50px'
-    }
-
-    if(!card4OnBoard) {
-        card4.style.marginRight = '50px'
-    }
-
-    if(!card1OnBoard) {
-        card1.style.marginRight = '450px'
-    }
-})
-
-card5.addEventListener('mouseout', function () {
-    if(!card2OnBoard) {
-        card2.style.marginRight = '200px'
-    }
-
-    if(!card3OnBoard) {
-        card3.style.marginRight = '0px'
-    }
-
-    if(!card4OnBoard) {
-        card4.style.marginRight = '0px'
-    }
-
-    if(!card1OnBoard) {
-        card1.style.marginRight = '400px'
-    }
-})
+}
 
 
 // Rotating the Player's Card
@@ -349,4 +223,61 @@ resetCard.addEventListener('click', function () {
 // Random Number Generator
 function randomNumberInt(minimum, maximum) {
     return Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
+}
+
+
+// Formatting the Player's Hand
+function formattingCards(hereArray) {
+    for(let i = 0; i < hereArray.length; ++ i) {
+        hereArray[i].style.margin = '0'
+        hereArray[i].style.transform = 'rotateZ(0deg)'
+        hereArray[i].style.bottom = '23px';
+    }
+
+    let setMarginRightAgain
+    let setMarginLeftAgain
+    let setBottomAgain
+    let setRotZAgain
+
+    setTimeout(function () {
+        if(hereArray.length === 3) {
+            setMarginRightAgain = 200 
+        }
+        else {
+            setMarginRightAgain = 100 
+        }
+        setBottomAgain = 23
+        setRotZAgain = 2
+
+
+        for(let i = Math.floor(hereArray.length / 2) - 1; i >= 0; -- i) {
+            console.log(i)
+            hereArray[i].style.marginRight = setMarginRightAgain + 'px'
+            hereArray[i].style.transform = 'rotateZ(' + -setRotZAgain + 'deg)'
+            hereArray[i].style.bottom = setBottomAgain + 'px'
+    
+            setMarginRightAgain += 200
+            ++ setRotZAgain
+            setBottomAgain -= 3
+        }
+    
+        if(hereArray.length === 3) {
+            setMarginLeftAgain = 200 
+        }
+        else {
+            setMarginLeftAgain = 100 
+        }
+        setBottomAgain = 23
+        setRotZAgain = 2
+    
+        for(let j = Math.round(hereArray.length / 2); j < hereArray.length; ++ j) {
+            hereArray[j].style.marginLeft = setMarginLeftAgain + 'px'
+            hereArray[j].style.transform = 'rotateZ(' + setRotZAgain + 'deg)'
+            hereArray[j].style.bottom = setBottomAgain + 'px'
+    
+            setMarginLeftAgain += 200
+            ++ setRotZAgain
+            setBottomAgain -= 3
+        }
+    }, 500)
 }
