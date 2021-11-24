@@ -3,7 +3,6 @@ function transformTheComputerCard(selectedCard, rndNmbr) {
     switch(rndNmbr) {
         case 1:
             selectedCard.style.transform = `rotateZ(-70deg) rotateX(30deg) rotateY(240deg) scale(0.75, 0.75)`
-            selectedCard
         break
 
         case 2:
@@ -24,11 +23,12 @@ function transformTheComputerCard(selectedCard, rndNmbr) {
     }
 }
 
-
+// Putting the Computer's Card on Board
 function putOnBoardCardComputer() {
     let cardCompChooseIndex = randomNumberInt(0, cardCompChoose.length - 1)
+    let topRandom = randomNumberInt(35, 40)
 
-    cardCompChoose[cardCompChooseIndex].style.top = marginRandom - 50 + 'px'
+    cardCompChoose[cardCompChooseIndex].style.top = topRandom + '%'
     cardCompChoose[cardCompChooseIndex].style.marginRight = '0'
     cardCompChoose[cardCompChooseIndex].style.marginLeft = '0'
     transformTheComputerCard(cardCompChoose[cardCompChooseIndex], randomNumberInt(1, 5))
@@ -36,6 +36,8 @@ function putOnBoardCardComputer() {
     cardCompChoose[cardCompChooseIndex].style.zIndex = cardIndex
     ++ cardIndex
 
-    const indexRemove = cardCompChoose.indexOf(cardCompChoose[cardCompChooseIndex])
-    cardCompChoose.splice(indexRemove, 1)
+    startGamePoints(chosenValuePlayerCard, cardImageComputerChoose[cardCompChooseIndex])
+
+    cardCompChoose.splice(cardCompChooseIndex, 1)
+    cardImageComputerChoose.splice(cardCompChooseIndex, 1)
 }

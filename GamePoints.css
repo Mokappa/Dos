@@ -1,0 +1,47 @@
+#computersPoints {
+    position: absolute;
+    top: 5%;
+    left: 2.5%;
+    cursor: default;
+}
+
+#computersPoints p {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white, -4px 5px 0px #585858;
+    transform: rotate(-5deg);
+    color: #7290FD;
+}
+
+#playersPoints {
+    position: absolute;
+    bottom: 5%;
+    left: 2.5%;
+    cursor: default;
+}
+
+#playersPoints p {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white, -4px 5px 0px #585858;
+    transform: rotate(-5deg);
+    color: #7290FD;
+}
+
+#announcerText {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+#announcerText p {
+    font-size: 0;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white, -4px 5px 0px #585858;
+    color: #7290FD;
+    transform: rotate(-20deg);
+    z-index: 999;
+    transition: all 0.25s ease-in-out;
+}

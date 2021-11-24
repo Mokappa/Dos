@@ -17,114 +17,182 @@ let cardCompChoose = [cardComp1, cardComp2, cardComp3, cardComp4, cardComp5]
 // Reset Card
 let resetCard = document.querySelector('#resetGameCard')
 
-// Timer delay for computer
+// Image Sources Player
+let card1Image = document.querySelector('#firstCard img')
+let card2Image = document.querySelector('#secondCard img')
+let card3Image = document.querySelector('#thirdCard img')
+let card4Image = document.querySelector('#fourthCard img')
+let card5Image = document.querySelector('#fifthCard img')
+let cardImagePlayerChoose = [card1Image, card2Image, card3Image, card4Image, card5Image]
+let imagesSourcePlayer = ['./Images/Stone.png', './Images/Scissors.png', './Images/Paper.png', './Images/Spock.png', './Images/Lizard.png']
+
+
+// Image Sources Computer
+let cardComp1Image = document.querySelector('#firstCardCompBackInterior img')
+let cardComp2Image = document.querySelector('#secondCardCompBackInterior img')
+let cardComp3Image = document.querySelector('#thirdCardCompBackInterior img')
+let cardComp4Image = document.querySelector('#fourthCardCompBackInterior img')
+let cardComp5Image = document.querySelector('#fifthCardCompBackInterior img')
+let cardImageComputerChoose = [cardComp1Image, cardComp2Image, cardComp3Image, cardComp4Image, cardComp5Image]
+let imagesSourceComputer = ['./Images/Stone.png', './Images/Scissors.png', './Images/Paper.png', './Images/Spock.png', './Images/Lizard.png']
+
+// Timer Delay for Computer
 let computerDelay
 
-// Some variables cards
+// Which Card should be on top
 let cardIndex = 0
-let marginRandom
+
+// Test if the Player's Card is on the Board
+let testIfCard1OnBoard = false
+let testIfCard2OnBoard = false
+let testIfCard3OnBoard = false
+let testIfCard4OnBoard = false
+let testIfCard5OnBoard = false
+
+// The Chosen Value of the Card
+let chosenValuePlayerCard
+
+// Audios Variables
+let winSound = new Audio('Sounds/WinSound.wav')
+let loseSound = new Audio('Sounds/LoseSound.mp3')
+let tieSound = new Audio('Sounds/TieSound.wav')
+let flipCard = new Audio('Sounds/CardFlip.mp3')
+winSound.volume = 0.1
+loseSound.volume = 1
+tieSound.volume = 0.1
+flipCard.volume = 0.1
 
 
-// Adding the onclick + hover function
+// Shuffle Everyone's Hand
+// Player's Hand
+for(let i = 0; i < cardImagePlayerChoose.length; ++ i) {
+    let indexImgPlayer = randomNumberInt(0, imagesSourcePlayer.length - 1)
+    cardImagePlayerChoose[i].src = imagesSourcePlayer[indexImgPlayer]
+    cardImagePlayerChoose[i].style.height = '30%'
+    imagesSourcePlayer.splice(indexImgPlayer, 1)
+}
+
+// Computer's hand
+for(let i = 0; i < cardImageComputerChoose.length; ++ i) {
+    let indexImgComp = randomNumberInt(0, imagesSourceComputer.length - 1)
+    cardImageComputerChoose[i].src = imagesSourceComputer[indexImgComp]
+    cardImageComputerChoose[i].style.height = '30%'
+    imagesSourceComputer.splice(indexImgComp, 1)
+}
+
+// Adding the onClick + Hover function
 // Card1
-function OsaMearga() {
-    hoverToRight(card1, cardPlayerChoose)
-}
-
-function OsaMearga2() {
-    hoverBack(card1, cardPlayerChoose)
-}
-
-card1.addEventListener('mouseover', OsaMearga)
-card1.addEventListener('mouseout', OsaMearga2) 
+card1.addEventListener('mouseover', function () {
+    if(!testIfCard1OnBoard) {
+        hoverUp(card1, cardPlayerChoose)
+    }
+})
+card1.addEventListener('mouseout', function () {
+    if(!testIfCard1OnBoard) {
+        hoverBack(card1, cardPlayerChoose, 2)
+    }
+}) 
 
 card1.addEventListener('click', function functionToRemove() {
-    card1.removeEventListener('mouseover', OsaMearga)
-    card1.removeEventListener('mouseout', OsaMearga2)
+    flipCard.play()
+
+    testIfCard1OnBoard = true
+    chosenValuePlayerCard = card1Image
 
     putOnBoardCard(card1, functionToRemove)
 })
 
 // Card2
-function OsaMearga3() {
-    hoverToRight(card2, cardPlayerChoose)
-}
-
-function OsaMearga4() {
-    hoverBack(card2, cardPlayerChoose)
-}
-
-card2.addEventListener('mouseover', OsaMearga3)
-card2.addEventListener('mouseout', OsaMearga4) 
+card2.addEventListener('mouseover', function () {
+    if(!testIfCard2OnBoard) {
+        hoverUp(card2, cardPlayerChoose)
+    }
+})
+card2.addEventListener('mouseout', function () {
+    if(!testIfCard2OnBoard) {
+        hoverBack(card2, cardPlayerChoose, 2.5)
+    }
+}) 
 
 card2.addEventListener('click', function functionToRemove2() {
-    card2.removeEventListener('mouseover', OsaMearga3)
-    card2.removeEventListener('mouseout', OsaMearga4)
+    flipCard.play()
+
+    testIfCard2OnBoard = true
+    chosenValuePlayerCard = card2Image
 
     putOnBoardCard(card2, functionToRemove2)
 })
 
 // Card3
-function OsaMearga5() {
-    hoverToRight(card3, cardPlayerChoose)
-}
-
-function OsaMearga6() {
-    hoverBack(card3, cardPlayerChoose)
-}
-
-card3.addEventListener('mouseover', OsaMearga5)
-card3.addEventListener('mouseout', OsaMearga6) 
+card3.addEventListener('mouseover', function () {
+    if(!testIfCard3OnBoard) {
+        hoverUp(card3, cardPlayerChoose)
+    }
+})
+card3.addEventListener('mouseout', function () {
+    if(!testIfCard3OnBoard) {
+        hoverBack(card3, cardPlayerChoose, 3)
+    }
+}) 
 
 card3.addEventListener('click', function functionToRemove3() {
-    card3.removeEventListener('mouseover', OsaMearga5)
-    card3.removeEventListener('mouseout', OsaMearga6)
+    flipCard.play()
+
+    testIfCard3OnBoard = true
+    chosenValuePlayerCard = card3Image
+
     putOnBoardCard(card3, functionToRemove3)
 })
 
 // Card4
-function OsaMearga7() {
-    hoverToRight(card4, cardPlayerChoose)
-}
-
-function OsaMearga8() {
-    hoverBack(card4, cardPlayerChoose)
-}
-
-card4.addEventListener('mouseover', OsaMearga7)
-card4.addEventListener('mouseout', OsaMearga8) 
+card4.addEventListener('mouseover', function () {
+    if(!testIfCard4OnBoard) {
+        hoverUp(card4, cardPlayerChoose)
+    }
+})
+card4.addEventListener('mouseout', function () {
+    if(!testIfCard4OnBoard) {
+        hoverBack(card4, cardPlayerChoose, 2.5)
+    }
+}) 
 
 card4.addEventListener('click', function functionToRemove4() {
-    card4.removeEventListener('mouseover', OsaMearga7)
-    card4.removeEventListener('mouseout', OsaMearga8)
+    flipCard.play()
+
+    testIfCard4OnBoard = true
+    chosenValuePlayerCard = card4Image
+
     putOnBoardCard(card4, functionToRemove4)
 })
 
 // Card5
-function OsaMearga9() {
-    hoverToRight(card5, cardPlayerChoose)
-}
-
-function OsaMearga10() {
-    hoverBack(card5, cardPlayerChoose)
-}
-
-card5.addEventListener('mouseover', OsaMearga9)
-card5.addEventListener('mouseout', OsaMearga10) 
+card5.addEventListener('mouseover', function () {
+    if(!testIfCard5OnBoard) {
+        hoverUp(card5, cardPlayerChoose)
+    }
+})
+card5.addEventListener('mouseout', function () {
+    if(!testIfCard5OnBoard) {
+        hoverBack(card5, cardPlayerChoose, 2)
+    }
+})
 
 card5.addEventListener('click', function functionToRemove5() {
-    card5.removeEventListener('mouseover', OsaMearga9)
-    card5.removeEventListener('mouseout', OsaMearga10)
+    flipCard.play()
+
+    testIfCard5OnBoard = true
+    chosenValuePlayerCard = card5Image
+
     putOnBoardCard(card5, functionToRemove5)
 })
 
 
-// Putting the card on board
+// Putting the Player's Card on the Board
 function putOnBoardCard(selectedCardBoard, removeFunction) {
     selectedCardBoard.removeEventListener('click', removeFunction)
-    marginRandom = randomNumberInt(350, 400)
+    let bottomRandom = randomNumberInt(35, 40)
 
-    selectedCardBoard.style.bottom = marginRandom + 'px'
+    selectedCardBoard.style.bottom = bottomRandom + '%'
     selectedCardBoard.style.margin = '0'
     selectedCardBoard.style.cursor = 'default'
     transformThePlayerCard(selectedCardBoard, randomNumberInt(1, 5))
@@ -132,14 +200,14 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
     selectedCardBoard.style.zIndex = cardIndex
     ++ cardIndex
 
-    // Remove the card from the player's hand
+    // Remove the Card from the Player's Hand
     const indexReemove = cardPlayerChoose.indexOf(selectedCardBoard)
     cardPlayerChoose.splice(indexReemove, 1)
 
-    // Formatting the player's hand
+    // Formatting the Player's Hand
     formattingCards(cardPlayerChoose)
 
-    // Disabling the player's hand
+    // Disabling the Player's Hand
     for(let i = 0; i < cardPlayerChoose.length; ++ i) {
         cardPlayerChoose[i].style.filter = 'brightness(60%)'
         cardPlayerChoose[i].style.pointerEvents = 'none'
@@ -148,7 +216,7 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
     computerDelay = randomNumberInt(1000, 1500)
     setTimeout(putOnBoardCardComputer, computerDelay)
 
-    // Enabling the player's hand
+    // Enabling the Player's Hand
     setTimeout(function () {
         for(let i = 0; i < cardPlayerChoose.length; ++ i) {
             cardPlayerChoose[i].style.filter = 'brightness(100%)'
@@ -159,32 +227,17 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
 
 
 // Hover Animation
-function hoverToRight(selectedCardHover, theArray) {
-    selectedCardHover.style.bottom = '100px'
+function hoverUp(selectedCardHover, theArray) {
+    selectedCardHover.style.bottom = '10%'
     selectedCardHover.style.zIndex = 999
 }
 
-function hoverBack(selectedCardHover, theArray) {
-    if(selectedCardHover === card1) {
-        selectedCardHover.style.bottom = '17px'
-        selectedCardHover.style.zIndex = 1
+function hoverBack(selectedCardHover, theArray, initialBottom) {
+    for(let i = 0; i < theArray.length; ++ i) {
+        theArray[i].style.zIndex = i
     }
-    else if(selectedCardHover === card2) {
-        selectedCardHover.style.bottom = '20px'
-        selectedCardHover.style.zIndex = 2
-    }
-    else if(selectedCardHover === card3) {
-        selectedCardHover.style.bottom = '23px'
-        selectedCardHover.style.zIndex = 3
-    }
-    else if(selectedCardHover === card4) {
-        selectedCardHover.style.bottom = '20px'
-        selectedCardHover.style.zIndex = 4
-    }
-    else if(selectedCardHover === card5) {
-        selectedCardHover.style.bottom = '17px'
-        selectedCardHover.style.zIndex = 5
-    }
+
+    selectedCardHover.style.bottom = initialBottom + '%'
 }
 
 
@@ -214,9 +267,13 @@ function transformThePlayerCard(selectedCard, rndNmbr) {
 }
 
 
-// Reset the game
+// Reset the Game
 resetCard.addEventListener('click', function () {
-    location.reload();
+    flipCard.play()
+
+    setTimeout(function () {
+        location.reload();
+    }, 250)
 })
 
 
@@ -231,7 +288,7 @@ function formattingCards(hereArray) {
     for(let i = 0; i < hereArray.length; ++ i) {
         hereArray[i].style.margin = '0'
         hereArray[i].style.transform = 'rotateZ(0deg)'
-        hereArray[i].style.bottom = '23px';
+        hereArray[i].style.bottom = '3%';
     }
 
     let setMarginRightAgain
@@ -241,43 +298,42 @@ function formattingCards(hereArray) {
 
     setTimeout(function () {
         if(hereArray.length === 3) {
-            setMarginRightAgain = 200 
+            setMarginRightAgain = 10
         }
         else {
-            setMarginRightAgain = 100 
+            setMarginRightAgain = 5
         }
-        setBottomAgain = 23
+        setBottomAgain = 3
         setRotZAgain = 2
 
 
         for(let i = Math.floor(hereArray.length / 2) - 1; i >= 0; -- i) {
-            console.log(i)
-            hereArray[i].style.marginRight = setMarginRightAgain + 'px'
+            hereArray[i].style.marginRight = setMarginRightAgain + '%'
             hereArray[i].style.transform = 'rotateZ(' + -setRotZAgain + 'deg)'
-            hereArray[i].style.bottom = setBottomAgain + 'px'
+            hereArray[i].style.bottom = setBottomAgain + '%'
     
-            setMarginRightAgain += 200
+            setMarginRightAgain += 10
             ++ setRotZAgain
-            setBottomAgain -= 3
+            setBottomAgain -= 0.5
         }
     
         if(hereArray.length === 3) {
-            setMarginLeftAgain = 200 
+            setMarginLeftAgain = 10
         }
         else {
-            setMarginLeftAgain = 100 
+            setMarginLeftAgain = 5
         }
-        setBottomAgain = 23
+        setBottomAgain = 3
         setRotZAgain = 2
     
         for(let j = Math.round(hereArray.length / 2); j < hereArray.length; ++ j) {
-            hereArray[j].style.marginLeft = setMarginLeftAgain + 'px'
+            hereArray[j].style.marginLeft = setMarginLeftAgain + '%'
             hereArray[j].style.transform = 'rotateZ(' + setRotZAgain + 'deg)'
-            hereArray[j].style.bottom = setBottomAgain + 'px'
+            hereArray[j].style.bottom = setBottomAgain + '%'
     
-            setMarginLeftAgain += 200
+            setMarginLeftAgain += 10
             ++ setRotZAgain
-            setBottomAgain -= 3
+            setBottomAgain -= 0.5
         }
     }, 500)
 }

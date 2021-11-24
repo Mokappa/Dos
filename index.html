@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dos (The Game)</title>
+    <title>Dos (Card Game)</title>
 
     <link rel="icon" type="image/png" href="./Images/DOS.png">
     <link rel="stylesheet" type="text/css" href="PlayersCards.css">
     <link rel="stylesheet" type="text/css" href="ComputersCards.css">
     <link rel="stylesheet" type="text/css" href="ResetCards.css">
+    <link rel="stylesheet" type="text/css" href="GamePoints.css">
 </head>
 <body>
     
@@ -17,31 +18,31 @@
     <div class="playersHand">
         <div id="firstCard">
             <div id="firstCardInterior">
-                <img src="./Images/Stone.png">
+                <img>
             </div>
         </div>
 
-        <div id="secondCard">
+        <div id="secondCard" name="Paper">
             <div id="secondCardInterior">
-                <img src="./Images/Paper.png">
+                <img>
             </div>
         </div>
 
-        <div id="thirdCard" >
+        <div id="thirdCard" name="Scissors">
             <div id="thirdCardInterior">
-                <img src="./Images/Scissors.png">
+                <img>
             </div>
         </div>
 
         <div id="fourthCard">
             <div id="fourthCardInterior">
-                <img src="./Images/Lizard.png">
+                <img>
             </div>
         </div>
 
         <div id="fifthCard">
             <div id="fifthCardInterior">
-                <img src="./Images/Spock.png">
+                <img>
             </div>
         </div>
     </div>
@@ -49,21 +50,11 @@
     <!-- Reset Pack -->
     <div id="resetGameCard">
         <div id="resetGameCardInterior">
-            <p>Reset Game</p>
+            <img src="./Images/Reset.png">
         </div>
     </div>
-
-    <div id="resetGameCard2">
-        <div id="resetGameCardInterior2">
-
-        </div>
-    </div>
-    
-    <div id="resetGameCard3">
-        <div id="resetGameCardInterior3">
-
-        </div>
-    </div>
+    <div id="resetGameCard2"></div>
+    <div id="resetGameCard3"></div>
 
     <!-- Computer's Hand -->
     <div class="computersHand">
@@ -73,11 +64,9 @@
             </div>
 
             <div id="firstCardCompBackInterior">
-                <img src="./Images/Paper.png">
+                <img>
             </div>
         </div>
-
-
 
         <div id="secondCardComp">
             <div id="secondCardCompInterior">
@@ -85,11 +74,9 @@
             </div>
 
             <div id="secondCardCompBackInterior">
-                <img src="./Images/Stone.png">
+                <img>
             </div>
         </div>
-
-
 
         <div id="thirdCardComp" >
             <div id="thirdCardCompInterior">
@@ -97,11 +84,9 @@
             </div>
 
             <div id="thirdCardCompBackInterior">
-                <img src="./Images/Spock.png">
+                <img>
             </div>
         </div>
-
-
 
         <div id="fourthCardComp">
             <div id="fourthCardCompInterior">
@@ -109,11 +94,9 @@
             </div>
 
             <div id="fourthCardCompBackInterior">
-                <img src="./Images/Scissors.png">
+                <img>
             </div>
         </div>
-
-
 
         <div id="fifthCardComp">
             <div id="fifthCardCompInterior">
@@ -121,12 +104,27 @@
             </div>
 
             <div id="fifthCardCompBackInterior">
-                <img src="./Images/Lizard.png">
+                <img>
             </div>
         </div>
     </div>
 
+    <!-- Scores -->
+    <div id="computersPoints">
+        <p></p>
+    </div>
+
+    <div id="playersPoints">
+        <p></p>
+    </div>
+
+    <!-- Text Announcer -->
+    <div id="announcerText">
+        <p></p>
+    </div>
+
     <script type="text/javascript" src="PlayersCardsJs.js"></script>
     <script type="text/javascript" src="ComputersCardsJs.js"></script>
+    <script type="text/javascript" src="startGame.js"></script>
 </body>
 </html>
