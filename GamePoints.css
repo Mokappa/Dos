@@ -45,3 +45,87 @@
     z-index: 999;
     transition: all 0.25s ease-in-out;
 }
+
+
+
+
+
+.cubeEverything {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    left: 0;
+    transform: rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 5px black;
+    transition: all 0.75s ease;
+}
+
+#frontFace {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.25s ease-in-out;
+}
+
+#frontFace p {
+    color: white;
+    font-size: 30px;
+}
+
+#leftFace {
+    position: absolute;
+    left: 25px;
+    height: 50px;
+    width: 50px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    transform-style: preserve-3d;
+    transform: rotateY(90deg) translateX(25px);
+}
+
+#rightFace {
+    position: absolute;
+    left: -25px;
+    height: 50px;
+    width: 50px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    transform-style: preserve-3d;
+    transform: rotateY(90deg) translateX(25px);
+}
+
+#backFace {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+}
+
+#upperFace {
+    position: absolute;
+    top: -25px;
+    height: 50px;
+    width: 50px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateY(-25px);
+}
+
+#bottomFace {
+    position: absolute;
+    top: 25px;
+    height: 50px;
+    width: 50px;
+    background: radial-gradient(rgb(211, 0, 0), rgb(78, 0, 0));
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateY(-25px);
+}

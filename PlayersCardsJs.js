@@ -340,3 +340,49 @@ function formattingCards(hereArray) {
         }
     }, 500)
 }
+
+
+
+let cubeInfo = document.querySelector('.cubeEverything')
+let whatHappensOnClick = false
+
+cubeInfo.addEventListener('click', function () {
+    if(!whatHappensOnClick) {
+        whatHappensOnClick = true
+
+        cubeInfo.style.left = '15%'
+        cubeInfo.style.transform = 'rotateY(360deg) rotateZ(360deg) translate(0, -50%)'
+
+        cubeInfo.style.pointerEvents = 'none'
+
+        setTimeout(function () {
+            document.querySelector('#frontFace').style.transform = 'scale(10)'
+            document.querySelector('#frontFace p').style.fontSize = '3px'
+            document.querySelector('#frontFace p').innerHTML = 'Rock beats Scissors + Lizard<br>Paper beats Rock + Spock<br>Scissors beats Paper + Lizard<br>Lizard beats Paper + Spock<br>Spock beats Rock + Scissors'
+            document.querySelector('#frontFace').style.boxShadow = '0 0 1px black'
+            document.querySelector('#frontFace').style.borderRadius = '2px'
+
+            cubeInfo.style.pointerEvents = 'auto'
+        }, 800)
+    }
+    else {
+        whatHappensOnClick = false
+
+        document.querySelector('#frontFace').style.transform = 'scale(1)'
+
+        cubeInfo.style.pointerEvents = 'none'
+
+        setTimeout(function () {
+            document.querySelector('#frontFace').style.boxShadow = ''
+            document.querySelector('#frontFace').style.borderRadius = '0'
+            document.querySelector('#frontFace p').style.fontSize = '30px'
+            document.querySelector('#frontFace p').innerHTML = '?'
+            cubeInfo.style.left = '0'
+            cubeInfo.style.transform = 'rotateY(0deg) rotateZ(0deg) translate(-50%, -50%)'
+        }, 300)
+
+        setTimeout(function () {
+            cubeInfo.style.pointerEvents = 'auto'
+        }, 1000)
+    }
+})
