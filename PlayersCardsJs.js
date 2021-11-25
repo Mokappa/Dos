@@ -66,17 +66,19 @@ flipCard.volume = 0.1
 // Shuffle Everyone's Hand
 // Player's Hand
 for(let i = 0; i < cardImagePlayerChoose.length; ++ i) {
+    cardImagePlayerChoose[i].style.height = '30%'
+
     let indexImgPlayer = randomNumberInt(0, imagesSourcePlayer.length - 1)
     cardImagePlayerChoose[i].src = imagesSourcePlayer[indexImgPlayer]
-    cardImagePlayerChoose[i].style.height = '30%'
     imagesSourcePlayer.splice(indexImgPlayer, 1)
 }
 
 // Computer's hand
 for(let i = 0; i < cardImageComputerChoose.length; ++ i) {
+    cardImageComputerChoose[i].style.height = '30%'
+
     let indexImgComp = randomNumberInt(0, imagesSourceComputer.length - 1)
     cardImageComputerChoose[i].src = imagesSourceComputer[indexImgComp]
-    cardImageComputerChoose[i].style.height = '30%'
     imagesSourceComputer.splice(indexImgComp, 1)
 }
 
@@ -213,7 +215,7 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
         cardPlayerChoose[i].style.pointerEvents = 'none'
     }
 
-    computerDelay = randomNumberInt(1000, 1500)
+    computerDelay = randomNumberInt(1000, 3000)
     setTimeout(putOnBoardCardComputer, computerDelay)
 
     // Enabling the Player's Hand
@@ -303,9 +305,9 @@ function formattingCards(hereArray) {
         else {
             setMarginRightAgain = 5
         }
+
         setBottomAgain = 3
         setRotZAgain = 2
-
 
         for(let i = Math.floor(hereArray.length / 2) - 1; i >= 0; -- i) {
             hereArray[i].style.marginRight = setMarginRightAgain + '%'
@@ -323,6 +325,7 @@ function formattingCards(hereArray) {
         else {
             setMarginLeftAgain = 5
         }
+        
         setBottomAgain = 3
         setRotZAgain = 2
     
