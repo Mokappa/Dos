@@ -1,15 +1,13 @@
-// Draw Card
-let drawCard = document.querySelector('.drawCard')
-let drawCardLast = document.querySelector('#drawCard3')
-
-// Drawing a Card
+// Drawing a Card Animation
 drawCard.addEventListener('click', drawSomeCards)
 drawCardLast.style.animation = 'workingCard 1s infinite alternate'
 
 function drawSomeCards() {
+    // Play Flip Sound
     flipCard.currentTime = 0
     flipCard.play()
 
+    // Player Draws Cards
     if(whoDrawsCards === 'player') {
         // Disabling the Draw Cards
         drawCard.removeEventListener('click', drawSomeCards)
@@ -39,7 +37,7 @@ function drawSomeCards() {
                 // Adding the styles
                 cardCreate.className = 'cardStyle'
                 cardCreateInterior.className = 'cardStyleInterior'
-                let randomColorPosition = Math.floor(Math.random() * 4)
+                let randomColorPosition = randomNumberInt(0, 3)
                 cardCreateInterior.style.background = 'radial-gradient(' + randomColor[randomColorPosition] + ')'
 
                 // Putting them in the HTML
@@ -64,7 +62,7 @@ function drawSomeCards() {
                 }, 250)
 
                 // The Number of the Card
-                let numberOfCard = Math.floor(Math.random() * 14)
+                let numberOfCard = randomNumberInt(0, 13)
 
                 if(numberOfCard === 2 || numberOfCard === 3) {
                     cardCreateInteriorText.innerHTML = `+${numberOfCard}`
@@ -111,11 +109,8 @@ function drawSomeCards() {
             ++ howManyTimes
         }, 0)
     } 
+    // Computer Draws Cards
     else {
-        // Disabling the Draw Cards
-        drawCard.removeEventListener('click', drawSomeCards)
-        drawCardLast.style.animation = 'none'
-
         whoDrawsCards = 'player'
         battleIsNotOver = false
 
@@ -136,7 +131,7 @@ function drawSomeCards() {
                 cardCompCreateInterior.className = 'cardCompStyleInterior'
                 cardCompCreateInteriorImage.src = './Images/DOS.png'
                 cardCompCreateInteriorBack.className = 'cardCompStyleInteriorBack'
-                let randomColorPositionComp = Math.floor(Math.random() * 4)
+                let randomColorPositionComp = randomNumberInt(0, 3)
                 cardCompCreateInteriorBack.style.background = 'radial-gradient(' + randomColor[randomColorPositionComp] + ')'
 
                 // Putting them in the HTML
@@ -163,7 +158,7 @@ function drawSomeCards() {
                 }, 250)
 
                 // The Number of the Card
-                let numberOfCardComp = Math.floor(Math.random() * 14)
+                let numberOfCardComp = randomNumberInt(0, 13)
 
                 if(numberOfCardComp === 2 || numberOfCardComp === 3) {
                     cardCompCreateInteriorBackText.innerHTML = `+${numberOfCardComp}`

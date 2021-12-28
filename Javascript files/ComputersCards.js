@@ -1,3 +1,147 @@
+// Putting the Computer's Card on Board
+function testIfComputerHasCard() {
+    // Play only if game is not ended
+    if(!ifGameEnded) {
+        if((chosenValueLastPlayedCard.getAttribute('data-numbercard') === '2' || chosenValueLastPlayedCard.getAttribute('data-numbercard') === '3') && battleIsNotOver) {
+            let computerHasCards = false
+            let computerSearchForNumber = false
+            let i = 0
+
+            let stopStop = setInterval(function () {
+                if(i >= cardCompChoose.length) {
+                    clearInterval(stopStop)
+
+                    if(computerSearchForNumber) {
+                        computerHasCards = true
+                    }
+
+                    if(computerHasCards) {
+                        whoDrawsCards = 'player'
+
+                        // Formatting the Computer's Hand
+                        formattingCardsComputer(cardCompChoose)
+                    }
+                    else {
+                        drawSomeCards()
+                    }
+            
+                    // Enabling Player's Hand
+                    for(let i = 0; i < cardPlayerChoose.length; ++ i) {
+                        cardPlayerChoose[i].style.filter = 'brightness(100%)'
+                        cardPlayerChoose[i].style.pointerEvents = 'auto'
+            
+                        cardPlayerChoose[i].addEventListener('mouseover', hoverUp)
+                        cardPlayerChoose[i].addEventListener('mouseout', hoverBack)
+                    }
+            
+                    // Change Middle Arrow for Computer
+                    middleArrow.style.fill = '#FFD900'
+                    middleArrow.style.filter = 'drop-shadow(0px 0px 30px #FFD900)'
+
+                    // Add Draw Card Animation
+                    drawCard.addEventListener('click', drawSomeCards)
+                    drawCardLast.style.animation = 'workingCard 1s infinite alternate'
+                }
+                else if(cardCompChoose[i].getAttribute('data-numbercard') === chosenValueLastPlayedCard.getAttribute('data-numbercard')) {
+                    computerSearchForNumber = true
+                    if(drawThisAmount === 1) {
+                        drawThisAmount = 0
+                    }
+                    drawThisAmount += +cardCompChoose[i].getAttribute('data-numbercard')
+
+                    putOnBoardCardComputer(i, cardCompChoose)
+                    -- howManyComputerCardsofcertainNumber[+cardCompChoose[i].getAttribute('data-numbercard')]
+
+                    -- i
+                }
+
+                ++ i
+            }, 600)
+        }
+        else {
+            let computerHasCards = false
+            let computerSearchForNumber = false
+            let i = 0
+
+            let stopStop = setInterval(function () {
+                if(i >= cardCompChoose.length) {
+                    clearInterval(stopStop)
+
+                    putCard4RunBack = false
+
+                    if(computerSearchForNumber) {
+                        computerHasCards = true
+                    }
+
+                    if(computerHasCards) {
+                        whoDrawsCards = 'player'
+
+                        // Formatting the Computer's Hand
+                        formattingCardsComputer(cardCompChoose)
+                    }
+                    else {
+                        drawSomeCards()
+                    }
+            
+                    // Enabling Player's Hand
+                    for(let i = 0; i < cardPlayerChoose.length; ++ i) {
+                        cardPlayerChoose[i].style.filter = 'brightness(100%)'
+                        cardPlayerChoose[i].style.pointerEvents = 'auto'
+            
+                        cardPlayerChoose[i].addEventListener('mouseover', hoverUp)
+                        cardPlayerChoose[i].addEventListener('mouseout', hoverBack)
+                    }
+
+                    // Change Middle Arrow for Computer
+                    middleArrow.style.fill = '#FFD900'
+                    middleArrow.style.filter = 'drop-shadow(0px 0px 30px #FFD900)'
+
+                    // Add Draw Card Animation
+                    drawCard.addEventListener('click', drawSomeCards)
+                    drawCardLast.style.animation = 'workingCard 1s infinite alternate'
+                }
+                else if(cardCompChoose[i].getAttribute('data-numbercard') === chosenValueLastPlayedCard.getAttribute('data-numbercard')) {
+                    computerSearchForNumber = true
+
+                    if(cardCompChoose[i].getAttribute('data-numbercard') === '2' || cardCompChoose[i].getAttribute('data-numbercard') === '3') {
+                        if(drawThisAmount === 1) {
+                            drawThisAmount = 0
+                        }
+
+                        drawThisAmount += +cardCompChoose[i].getAttribute('data-numbercard')
+                        battleIsNotOver = true
+                    }
+
+                    putOnBoardCardComputer(i, cardCompChoose)
+                    -- howManyComputerCardsofcertainNumber[+cardCompChoose[i].getAttribute('data-numbercard')]
+
+                    -- i
+                }
+                else if(cardCompChoose[i].getAttribute('data-colorcard') === chosenValueLastPlayedCard.getAttribute('data-colorcard') && !computerSearchForNumber) {
+                    computerSearchForNumber = true
+
+                    if(cardCompChoose[i].getAttribute('data-numbercard') === '2' || cardCompChoose[i].getAttribute('data-numbercard') === '3') {
+                        if(drawThisAmount === 1) {
+                            drawThisAmount = 0
+                        }
+
+                        drawThisAmount += +cardCompChoose[i].getAttribute('data-numbercard')
+                        battleIsNotOver = true
+                    }
+
+                    putOnBoardCardComputer(i, cardCompChoose)
+                    -- howManyComputerCardsofcertainNumber[+cardCompChoose[i].getAttribute('data-numbercard')]
+
+                    i = -1
+                }
+
+                ++ i
+            }, 600)
+        }
+    }
+}
+
+
 // Rotating the Computer's Card
 function transformTheComputerCard(selectedCard, rndNmbr) {
     switch(rndNmbr) {
@@ -23,139 +167,6 @@ function transformTheComputerCard(selectedCard, rndNmbr) {
     }
 }
 
-// Putting the Computer's Card on Board
-function testIfComputerHasCard() {
-    if((chosenValueLastPlayedCard.getAttribute('data-numbercard') === '2' || chosenValueLastPlayedCard.getAttribute('data-numbercard') === '3') && battleIsNotOver) {
-        let computerHasCards = false
-        let computerSearchForNumber = false
-        let i = 0
-
-        let stopStop = setInterval(function () {
-            if(i >= cardCompChoose.length) {
-                clearInterval(stopStop)
-
-                if(computerSearchForNumber) {
-                    computerHasCards = true
-                }
-
-                if(computerHasCards) {
-                    whoDrawsCards = 'player'
-                }
-                else {
-                    drawSomeCards()
-                }
-        
-                // Enabling Player's Hand
-                for(let i = 0; i < cardPlayerChoose.length; ++ i) {
-                    cardPlayerChoose[i].style.filter = 'brightness(100%)'
-                    cardPlayerChoose[i].style.pointerEvents = 'auto'
-        
-                    cardPlayerChoose[i].addEventListener('mouseover', hoverUp)
-                    cardPlayerChoose[i].addEventListener('mouseout', hoverBack)
-                }
-        
-                // Change Middle Arrow for Computer
-                middleArrow.style.fill = '#FFD900'
-                middleArrow.style.filter = 'drop-shadow(0px 0px 30px #FFD900)'
-
-                // Add Draw Card Animation
-                drawCard.addEventListener('click', drawSomeCards)
-                drawCardLast.style.animation = 'workingCard 1s infinite alternate'
-            }
-            else if(cardCompChoose[i].getAttribute('data-numbercard') === chosenValueLastPlayedCard.getAttribute('data-numbercard')) {
-                computerSearchForNumber = true
-                if(drawThisAmount === 1) {
-                    drawThisAmount = 0
-                }
-                drawThisAmount += +cardCompChoose[i].getAttribute('data-numbercard')
-
-                putOnBoardCardComputer(i, cardCompChoose)
-                -- howManyComputerCardsofcertainNumber[+cardCompChoose[i].getAttribute('data-numbercard')]
-
-                -- i
-            }
-
-            ++ i
-        }, 600)
-    }
-    else {
-        let computerHasCards = false
-        let computerSearchForNumber = false
-        let i = 0
-
-        let stopStop = setInterval(function () {
-            if(i >= cardCompChoose.length) {
-                clearInterval(stopStop)
-
-                putCard4RunBack = false
-
-                if(computerSearchForNumber) {
-                    computerHasCards = true
-                }
-
-                if(computerHasCards) {
-                    whoDrawsCards = 'player'
-                }
-                else {
-                    drawSomeCards()
-                }
-        
-                // Enabling Player's Hand
-                for(let i = 0; i < cardPlayerChoose.length; ++ i) {
-                    cardPlayerChoose[i].style.filter = 'brightness(100%)'
-                    cardPlayerChoose[i].style.pointerEvents = 'auto'
-        
-                    cardPlayerChoose[i].addEventListener('mouseover', hoverUp)
-                    cardPlayerChoose[i].addEventListener('mouseout', hoverBack)
-                }
-
-                // Change Middle Arrow for Computer
-                middleArrow.style.fill = '#FFD900'
-                middleArrow.style.filter = 'drop-shadow(0px 0px 30px #FFD900)'
-
-                // Add Draw Card Animation
-                drawCard.addEventListener('click', drawSomeCards)
-                drawCardLast.style.animation = 'workingCard 1s infinite alternate'
-                
-            }
-            else if(cardCompChoose[i].getAttribute('data-numbercard') === chosenValueLastPlayedCard.getAttribute('data-numbercard')) {
-                computerSearchForNumber = true
-
-                if(cardCompChoose[i].getAttribute('data-numbercard') === '2' || cardCompChoose[i].getAttribute('data-numbercard') === '3') {
-                    if(drawThisAmount === 1) {
-                        drawThisAmount = 0
-                    }
-                    drawThisAmount += +cardCompChoose[i].getAttribute('data-numbercard')
-                    battleIsNotOver = true
-                }
-
-                putOnBoardCardComputer(i, cardCompChoose)
-                -- howManyComputerCardsofcertainNumber[+cardCompChoose[i].getAttribute('data-numbercard')]
-
-                -- i
-            }
-            else if(cardCompChoose[i].getAttribute('data-colorcard') === chosenValueLastPlayedCard.getAttribute('data-colorcard') && !computerSearchForNumber) {
-                computerSearchForNumber = true
-
-                if(cardCompChoose[i].getAttribute('data-numbercard') === '2' || cardCompChoose[i].getAttribute('data-numbercard') === '3') {
-                    if(drawThisAmount === 1) {
-                        drawThisAmount = 0
-                    }
-                    drawThisAmount += +cardCompChoose[i].getAttribute('data-numbercard')
-                    battleIsNotOver = true
-                }
-
-                putOnBoardCardComputer(i, cardCompChoose)
-                -- howManyComputerCardsofcertainNumber[+cardCompChoose[i].getAttribute('data-numbercard')]
-
-                i = -1
-            }
-
-            ++ i
-        }, 600)
-    }
-}
-
 
 // Putting the Computer's Card on Board
 function putOnBoardCardComputer(positionCardCompChosen, hereArray) {
@@ -173,7 +184,7 @@ function putOnBoardCardComputer(positionCardCompChosen, hereArray) {
     whoDrawsCards = 'player'
 
     // Putting Card Computer on Board
-    setTimeout(function () {
+    setTimeout(function () {        
         hereArray[positionCardCompChosen].style.top = topRandom + '%'
         hereArray[positionCardCompChosen].style.marginRight = '0'
         hereArray[positionCardCompChosen].style.marginLeft = '0'
@@ -183,8 +194,6 @@ function putOnBoardCardComputer(positionCardCompChosen, hereArray) {
         ++ cardIndex
 
         hereArray.splice(positionCardCompChosen, 1)
-
-        formattingCardsComputer(hereArray)
 
         // See if Computer has 2 Cards
         if(hereArray.length === 2) {
@@ -203,18 +212,19 @@ function putOnBoardCardComputer(positionCardCompChosen, hereArray) {
                         transform: 'translate(-50%, -50%) rotate(-30deg)'
                     },
                 ], {
-                    duration: 1000
+                    duration: 750
             })
 
             setTimeout(function () {
                 DosAnnouncer.style.fontSize = '0'
-            }, 750)
+            }, 500)
         }
 
         // See if the Computer won
         startGamePoints()
     }, 500)
 }
+
 
 // Formatting the Computers's Hand
 function formattingCardsComputer(hereArray) {

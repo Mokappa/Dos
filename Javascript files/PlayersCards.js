@@ -25,9 +25,6 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
         const indexReemove = cardPlayerChoose.indexOf(selectedCardBoard)
         cardPlayerChoose.splice(indexReemove, 1)
         -- howManyPlayerCardsofcertainNumber[+selectedCardBoard.getAttribute('data-numbercard')]
-    
-        // Formatting the Player's Hand
-        formattingCards(cardPlayerChoose)
 
         // See if Player has 2 Cards
         if(cardPlayerChoose.length === 2) {
@@ -45,13 +42,14 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
                     {   
                         transform: 'translate(-50%, -50%) rotate(-30deg)'
                     },
-                ], {
-                    duration: 1000
+                ], 
+                {
+                    duration: 750
             })
 
             setTimeout(function () {
                 DosAnnouncer.style.fontSize = '0'
-            }, 750)
+            }, 500)
         }
     
         // The Chosen Value
@@ -77,6 +75,9 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
                 // Let the Computer to draw Cards
                 manyCards = false
                 whoDrawsCards = 'computer'
+
+                // Formatting the Player's Hand
+                formattingCards(cardPlayerChoose)
                 
                 // Disabling the Player's Hand
                 for(let i = 0; i < cardPlayerChoose.length; ++ i) {
@@ -97,6 +98,9 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
             // Let the Computer to draw Cards
             manyCards = false
             whoDrawsCards = 'computer'
+
+            // Formatting the Player's Hand
+            formattingCards(cardPlayerChoose)
             
             // Disabling the Player's Hand
             for(let i = 0; i < cardPlayerChoose.length; ++ i) {
@@ -116,7 +120,7 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
             drawCard.removeEventListener('click', drawSomeCards)
             drawCardLast.style.animation = 'none'
         }
-    
+
         // See if the Player won
         startGamePoints()
     }

@@ -1,25 +1,14 @@
 /* Reset Cards */
-/* Reset Card1 */
-.drawCard {
+.drawCardStyle {
     height: 25%;
     width: 7%;
     position: absolute;
     right: 15%;
-    top: 50%;
     background: black;
     border-radius: 20px;
     border: 3px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transform-style: preserve-3d;
     transform: rotateX(65deg) rotateZ(40deg);
-    cursor: pointer;
-    transition: all 0.25s ease-in-out;
-}
-
-.drawCard:hover {
-    filter: brightness(60%);
 }
 
 .drawCardInterior {
@@ -30,51 +19,54 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.25s linear;
 }
 
 .drawCardInterior img {
     width: 100%;
 }
 
-/* Reset Card2 */
+#drawCardFirst {
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+#drawCardFirst:hover {
+    filter: brightness(60%);
+}
+
 #drawCard2 {
-    height: 25%;
-    width: 7%;
-    position: absolute;
-    right: 15%;
-    top: 50.55%;
-    background: black;
-    border-radius: 20px;
-    border: 3px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    transform: rotateX(65deg) rotateZ(40deg);
-    z-index: -1;
-}
-
-/* Reset Card3 */
-#drawCard3 {
-    height: 25%;
-    width: 7%;
-    position: absolute;
-    right: 15%;
-    top: 51%;
-    background: black;
-    border-radius: 20px;
-    border: 3px solid white;
-    box-shadow: 0px 0px 10px 1px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    transform: rotateX(65deg) rotateZ(40deg);
+    top: 50.5%;
     z-index: -2;
-    transition: box-shadow 0.25s linear;
 }
 
+#drawCard3 {
+    top: 51%;
+    z-index: -3;
+}
+
+#drawCard4 {
+    top: 51.5%;
+    z-index: -4;
+}
+
+#drawCard5 {
+    top: 52%;
+    z-index: -5;
+}
+
+#drawCardLast {
+    top: 52.5%;
+    box-shadow: 0px 0px 10px 1px black;
+    transition: box-shadow 0.25s linear;
+    z-index: -6;
+}
+
+
+/* Animations */
 @keyframes workingCard {
     from {
         box-shadow: 0px 0px 10px 1px black;

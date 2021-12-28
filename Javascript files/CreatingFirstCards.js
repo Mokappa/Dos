@@ -1,10 +1,32 @@
-// Creating the Cards
-let howManyTimes = 0
+// Reinitializing everything with 0
+function reinitializingEverything() {
+    // Game will start again
+    ifGameEnded = false
 
-startGeneratingCards()
+    // Clearing both hands
+    playersHand.innerHTML = ''
+    computersHand.innerHTML = ''
 
+    // Reinitializing the variables
+    battleIsNotOver = false
+    drawThisAmount = 1
+    cardIndex = 0
+    // Player
+    cardPlayerChoose = []
+    howManyPlayerCardsofcertainNumber = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    manyCards = false
+    // Computer
+    cardCompChoose = []
+    howManyComputerCardsofcertainNumber = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}
+
+
+// Generating all the Cards
 function startGeneratingCards() {
+    howManyTimes = 0
+
     let stopInterval = setInterval(function () {
+        // How many Cards should be generated
         if(howManyTimes < 5) {
             // Player's Cards
             // Creating the Card
@@ -15,11 +37,11 @@ function startGeneratingCards() {
             // Adding the styles
             cardCreate.className = 'cardStyle'
             cardCreateInterior.className = 'cardStyleInterior'
-            let randomColorPosition = Math.floor(Math.random() * 4)
+            let randomColorPosition = randomNumberInt(0, 3)
             cardCreateInterior.style.background = 'radial-gradient(' + randomColor[randomColorPosition] + ')'
             
             // The Number of the Card
-            let numberOfCard = Math.floor(Math.random() * 14)
+            let numberOfCard = randomNumberInt(0, 13)
 
             ++ howManyPlayerCardsofcertainNumber[numberOfCard]
 
@@ -66,11 +88,11 @@ function startGeneratingCards() {
             cardCompCreateInterior.className = 'cardCompStyleInterior'
             cardCompCreateInteriorImage.src = './Images/DOS.png'
             cardCompCreateInteriorBack.className = 'cardCompStyleInteriorBack'
-            let randomColorPositionComp = Math.floor(Math.random() * 4)
+            let randomColorPositionComp = randomNumberInt(0, 3)
             cardCompCreateInteriorBack.style.background = 'radial-gradient(' + randomColor[randomColorPositionComp] + ')'
             
             // The Number of the Card
-            let numberOfCardComp = Math.floor(Math.random() * 14)
+            let numberOfCardComp = randomNumberInt(0, 13)
             
             ++ howManyComputerCardsofcertainNumber[numberOfCardComp]
 
@@ -111,7 +133,7 @@ function startGeneratingCards() {
             // Adding the styles
             cardCreate.className = 'cardStyle'
             cardCreateInterior.className = 'cardStyleInterior'
-            let randomColorPosition = Math.floor(Math.random() * 4)
+            let randomColorPosition = randomNumberInt(0, 3)
             cardCreateInterior.style.background = 'radial-gradient(' + randomColor[randomColorPosition] + ')'
 
             let bottomRandom = randomNumberInt(35, 40)
@@ -125,7 +147,7 @@ function startGeneratingCards() {
             chosenValueLastPlayedCard = cardCreate
                 
             // The Number of the Middle Card
-            let numberOfCard = Math.floor(Math.random() * 14)
+            let numberOfCard = randomNumberInt(0, 13)
 
             if(numberOfCard === 2 || numberOfCard === 3) {
                 cardCreateInteriorText.innerHTML = `+${numberOfCard}`
@@ -152,13 +174,54 @@ function startGeneratingCards() {
             formattingCards(cardPlayerChoose)
             formattingCardsComputer(cardCompChoose)
 
-            // Adding the Hover Animation
+            // Starting the actual Game
             setTimeout(function () {
-                for(let i = 0; i < cardPlayerChoose.length; ++ i) {
-                    cardPlayerChoose[i].addEventListener('mouseover', hoverUp)
-                    cardPlayerChoose[i].addEventListener('mouseout', hoverBack)
+                let whoStartsTheGame = randomNumberInt(1, 2)
+ 
+                // The Player Starts
+                if(whoStartsTheGame === 1) {
+                    whoDrawsCards = 'player'
+            
+                    // Add Draw Card Animation and onClick Event
+                    drawCard.addEventListener('click', drawSomeCards)
+                    drawCardLast.style.animation = 'workingCard 1s infinite alternate'
+            
+                    // Changing the Circle Arrow
+                    middleArrow.style.fill = '#FFD900'
+                    middleArrow.style.filter = 'drop-shadow(0px 0px 30px #FFD900)'
+            
+                    // Enabling Player's Hand
+                    for(let i = 0; i < cardPlayerChoose.length; ++ i) {
+                        cardPlayerChoose[i].style.filter = 'brightness(100%)'
+                        cardPlayerChoose[i].style.pointerEvents = 'auto'
+            
+                        cardPlayerChoose[i].addEventListener('mouseover', hoverUp)
+                        cardPlayerChoose[i].addEventListener('mouseout', hoverBack)
+                    }
                 }
-            }, 1000)
+                // The Computer Starts
+                else {
+                    whoDrawsCards = 'computer'
+                    
+                    // Remove Draw Card Animation and onClick Event
+                    drawCard.removeEventListener('click', drawSomeCards)
+                    drawCardLast.style.animation = 'none'
+                    
+                    // Changing the Circle Arrow
+                    middleArrow.style.fill = 'rgb(255, 0, 0)'
+                    middleArrow.style.filter = 'drop-shadow(0px 0px 30px rgb(255, 0, 0))'
+            
+                    // Disabling the Player's Hand
+                    for(let i = 0; i < cardPlayerChoose.length; ++ i) {
+                        cardPlayerChoose[i].style.filter = 'brightness(60%)'
+                        cardPlayerChoose[i].style.pointerEvents = 'none'
+                    }
+
+                    // Computer Playing
+                    computerDelay = randomNumberInt(250, 750)
+                    setTimeout(testIfComputerHasCard, computerDelay)
+                }
+            }, 500)
         }
 
         ++ howManyTimes
