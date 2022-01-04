@@ -8,6 +8,14 @@ card1.addEventListener('mouseenter', function () {
     // Yellow Box Shadow Appearing
     card1.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
 
+    // Title Change Color
+    document.querySelector('.titleAppearTop p').style.color = '#7290FD'
+
+    // Particle Change Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = '#405191'
+    })
+    
     // Title Appear on Hover
     textAppearOnHover.style.opacity = 1
     textAppearParag.innerHTML = 'Singleplayer'
@@ -22,6 +30,14 @@ card1.addEventListener('mouseleave', function () {
     // Yellow Box Shadow Appearing
     card1.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
 
+    // Title Change to initial Color
+    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
+
+    // Particle Change to initial Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = 'rgb(221, 221, 221)'
+    })
+
     // Title Disappear on Leaving
     textAppearOnHover.style.opacity = 0
 })
@@ -34,6 +50,15 @@ card2.addEventListener('mouseenter', function () {
 
     // Yellow Box Shadow Appearing
     card2.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
+
+    // Title Change Color
+    document.querySelector('.titleAppearTop p').style.color = '#72fd72'
+
+    // Particle Change Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = '#408a40'
+    })
+
 
     // Title Appear on Hover
     textAppearOnHover.style.opacity = 1
@@ -48,6 +73,14 @@ card2.addEventListener('mouseleave', function () {
     // Yellow Box Shadow Appearing
     card2.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
 
+    // Title Change to initial Color
+    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
+
+    // Particle Change to initial Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = 'rgb(221, 221, 221)'
+    })
+    
     // Title Disappear on Leaving
     textAppearOnHover.style.opacity = 0
 })
@@ -59,6 +92,14 @@ card3.addEventListener('mouseenter', function () {
 
     // Yellow Box Shadow Appearing
     card3.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
+
+    // Title Change Color
+    document.querySelector('.titleAppearTop p').style.color = '#fdd172'
+
+    // Particle Change Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = '#92783f'
+    })
 
     // Title Appear on Hover
     textAppearOnHover.style.opacity = 1
@@ -72,6 +113,14 @@ card3.addEventListener('mouseleave', function () {
     // Yellow Box Shadow Appearing
     card3.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
 
+    // Title Change to initial Color
+    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
+
+    // Particle Change to initial Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = 'rgb(221, 221, 221)'
+    })
+
     // Title Disappear on Leaving
     textAppearOnHover.style.opacity = 0
 })
@@ -83,6 +132,14 @@ card4.addEventListener('mouseenter', function () {
     // Yellow Box Shadow Appearing
     card4.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
 
+    // Title Change Color
+    document.querySelector('.titleAppearTop p').style.color = '#ff5353'
+
+    // Particle Change Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = '#8b2d2d'
+    })
+
     // Title Appear on Hover
     textAppearOnHover.style.opacity = 1
     textAppearParag.innerHTML = 'Rules of DOS'
@@ -93,6 +150,14 @@ card4.addEventListener('mouseleave', function () {
 
     // Yellow Box Shadow Appearing
     card4.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
+
+    // Title Change to initial Color
+    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
+
+    // Particle Change to initial Background
+    document.querySelectorAll('.particle').forEach(function (element) {
+        element.style.background = 'rgb(221, 221, 221)'
+    })
 
     // Title Disappear on Leaving
     textAppearOnHover.style.opacity = 0
