@@ -287,7 +287,7 @@ for(let i = 1; i <= 4; ++ i) {
                 let j = 4
 
                 let stopInterval = setInterval(function () {
-                    if(j < 0) {
+                    if(j <= 1) {
                         clearInterval(stopInterval)
                     }
 
@@ -321,3 +321,13 @@ function setSoundVolume(volumeInput) {
     selectSound.volume = volumeInput
     dosSound.volume = volumeInput
 }
+
+
+// setInterval(function () {
+//     if (window.matchMedia("(orientation: portrait)").matches) {
+//         console.log('portrait')
+//     }
+//     else if (window.matchMedia("(orientation: landscape)").matches) {
+//         console.log('landscape')
+//     }
+// }, 10)

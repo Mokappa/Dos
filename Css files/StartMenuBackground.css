@@ -14,6 +14,14 @@ body {
 }
 
 
+
+.putLandscapeMode {
+    display: none;
+}
+
+
+
+
 .loadingScreen {
     min-height: 100vh;
     width: 100%;
@@ -601,13 +609,51 @@ body {
     opacity: 0.3;
 }
 
-.littleStar {
-    position: absolute;
-    height: 75px;
-    width: 75px;
-    transition: opacity 0.5s ease;
-    filter: blur(3px);
-    opacity: 0;
+
+/* Phone Responsive */
+@media screen and (orientation: portrait) {
+    .putLandscapeMode {
+        position: absolute;
+        top: 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(rgb(255, 115, 0), rgb(110, 0, 0));
+    }
+
+    .putLandscapeMode p {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        text-align: center;
+        padding: 0 40px;
+    }
+
+    .startMenuBackground {
+        display: none;
+    }
+
+    .backgroundGamePhone {
+        display: none;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .putLandscapeMode {
+        display: none;
+    }
+
+    .startMenuBackground {
+        display: block;
+    }
+
+    .backgroundGamePhone {
+        display: block;
+    }
 }
 
 
