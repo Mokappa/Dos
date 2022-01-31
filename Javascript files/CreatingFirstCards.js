@@ -213,8 +213,8 @@ function startGeneratingCards() {
             
                     // Disabling the Player's Hand
                     for(let i = 0; i < cardPlayerChoose.length; ++ i) {
-                        cardPlayerChoose[i].style.filter = 'brightness(60%)'
                         cardPlayerChoose[i].style.pointerEvents = 'none'
+                        cardPlayerChoose[i].style.filter = 'brightness(60%)'
                     }
 
                     // Computer Playing

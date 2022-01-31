@@ -85,8 +85,8 @@ function testIfComputerHasCard() {
             
                     // Enabling Player's Hand
                     for(let i = 0; i < cardPlayerChoose.length; ++ i) {
-                        cardPlayerChoose[i].style.filter = 'none'
                         cardPlayerChoose[i].style.pointerEvents = 'auto'
+                        cardPlayerChoose[i].style.filter = 'none'
             
                         cardPlayerChoose[i].addEventListener('mouseover', hoverUp)
                         cardPlayerChoose[i].addEventListener('mouseout', hoverBack)

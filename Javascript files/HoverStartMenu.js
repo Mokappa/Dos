@@ -1,5 +1,5 @@
 // Animation Card1 Hover
-if(deviceType === "desktop") {
+if(deviceType() === "desktop") {
     card1.addEventListener('mouseenter', function () {
         card1.style.top = '47%'
         card2.style.left = '53%'
@@ -273,7 +273,7 @@ for(let i = 1; i <= 10; ++ i) {
 
 
 // 
-if(deviceType === "desktop") {
+if(deviceType() === "desktop") {
     for(let i = 1; i <= 4; ++ i) {
         if(i === 4) {
             document.querySelector(`#startPack${i}`).addEventListener('click', function () {
