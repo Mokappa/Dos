@@ -58,8 +58,20 @@ let middleArrow = document.querySelector('#arrowMiddle')
 // Creating the Cards
 let howManyTimes
 
-
 // Random Number Generator
 function randomNumberInt(minimum, maximum) {
     return Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
+}
+
+
+// Function for testing the device (Taken from stackoverflow)
+function deviceType() {
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(navigator.userAgent)) {
+        return "tablet"
+    }
+    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(navigator.userAgent)) {
+        return "mobile"
+    }
+
+    return "desktop"
 }

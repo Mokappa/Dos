@@ -1,167 +1,168 @@
 // Animation Card1 Hover
-card1.addEventListener('mouseenter', function () {
-    card1.style.top = '47%'
-    card2.style.left = '53%'
-    card3.style.left = '53%'
-    card4.style.left = '53%'
-    
-    // Yellow Box Shadow Appearing
-    card1.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
+if(deviceType === "desktop") {
+    card1.addEventListener('mouseenter', function () {
+        card1.style.top = '47%'
+        card2.style.left = '53%'
+        card3.style.left = '53%'
+        card4.style.left = '53%'
+        
+        // Yellow Box Shadow Appearing
+        card1.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
 
-    // Title Change Color
-    document.querySelector('.titleAppearTop p').style.color = '#7290FD'
+        // Title Change Color
+        document.querySelector('.titleAppearTop p').style.color = '#7290FD'
 
-    // Particle Change Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = '#405191'
-    })
-    
-    // Title Appear on Hover
-    textAppearOnHover.style.opacity = 1
-    textAppearParag.innerHTML = 'Singleplayer'
-})
-
-card1.addEventListener('mouseleave', function () {
-    card1.style.top = '50%'
-    card2.style.left = '50%'
-    card3.style.left = '50%'
-    card4.style.left = '50%'
-    
-    // Yellow Box Shadow Appearing
-    card1.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
-
-    // Title Change to initial Color
-    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
-
-    // Particle Change to initial Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = 'rgb(221, 221, 221)'
+        // Particle Change Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = '#405191'
+        })
+        
+        // Title Appear on Hover
+        textAppearOnHover.style.opacity = 1
+        textAppearParag.innerHTML = 'Singleplayer'
     })
 
-    // Title Disappear on Leaving
-    textAppearOnHover.style.opacity = 0
-})
+    card1.addEventListener('mouseleave', function () {
+        card1.style.top = '50%'
+        card2.style.left = '50%'
+        card3.style.left = '50%'
+        card4.style.left = '50%'
+        
+        // Yellow Box Shadow Appearing
+        card1.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
 
-// Animation Card2 Hover
-card2.addEventListener('mouseenter', function () {
-    card2.style.top = '47%'
-    card3.style.left = '53%'
-    card4.style.left = '53%'
+        // Title Change to initial Color
+        document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
 
-    // Yellow Box Shadow Appearing
-    card2.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
+        // Particle Change to initial Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = 'rgb(221, 221, 221)'
+        })
 
-    // Title Change Color
-    document.querySelector('.titleAppearTop p').style.color = '#72fd72'
-
-    // Particle Change Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = '#408a40'
+        // Title Disappear on Leaving
+        textAppearOnHover.style.opacity = 0
     })
 
+    // Animation Card2 Hover
+    card2.addEventListener('mouseenter', function () {
+        card2.style.top = '47%'
+        card3.style.left = '53%'
+        card4.style.left = '53%'
 
-    // Title Appear on Hover
-    textAppearOnHover.style.opacity = 1
-    textAppearParag.innerHTML = 'Multiplayer'
-})
+        // Yellow Box Shadow Appearing
+        card2.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
 
-card2.addEventListener('mouseleave', function () {
-    card2.style.top = '50%'
-    card3.style.left = '50%'
-    card4.style.left = '50%'
+        // Title Change Color
+        document.querySelector('.titleAppearTop p').style.color = '#72fd72'
 
-    // Yellow Box Shadow Appearing
-    card2.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
+        // Particle Change Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = '#408a40'
+        })
 
-    // Title Change to initial Color
-    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
-
-    // Particle Change to initial Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = 'rgb(221, 221, 221)'
-    })
-    
-    // Title Disappear on Leaving
-    textAppearOnHover.style.opacity = 0
-})
-
-// Animation Card3 Hover
-card3.addEventListener('mouseenter', function () {
-    card3.style.top = '47%'
-    card4.style.left = '53%'
-
-    // Yellow Box Shadow Appearing
-    card3.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
-
-    // Title Change Color
-    document.querySelector('.titleAppearTop p').style.color = '#fdd172'
-
-    // Particle Change Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = '#92783f'
+        // Title Appear on Hover
+        textAppearOnHover.style.opacity = 1
+        textAppearParag.innerHTML = 'Multiplayer'
     })
 
-    // Title Appear on Hover
-    textAppearOnHover.style.opacity = 1
-    textAppearParag.innerHTML = 'Settings'
-})
+    card2.addEventListener('mouseleave', function () {
+        card2.style.top = '50%'
+        card3.style.left = '50%'
+        card4.style.left = '50%'
 
-card3.addEventListener('mouseleave', function () {
-    card3.style.top = '50%'
-    card4.style.left = '50%'
+        // Yellow Box Shadow Appearing
+        card2.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
 
-    // Yellow Box Shadow Appearing
-    card3.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
+        // Title Change to initial Color
+        document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
 
-    // Title Change to initial Color
-    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
-
-    // Particle Change to initial Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = 'rgb(221, 221, 221)'
+        // Particle Change to initial Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = 'rgb(221, 221, 221)'
+        })
+        
+        // Title Disappear on Leaving
+        textAppearOnHover.style.opacity = 0
     })
 
-    // Title Disappear on Leaving
-    textAppearOnHover.style.opacity = 0
-})
+    // Animation Card3 Hover
+    card3.addEventListener('mouseenter', function () {
+        card3.style.top = '47%'
+        card4.style.left = '53%'
 
-// Animation Card4 Hover
-card4.addEventListener('mouseenter', function () {
-    card4.style.top = '47%'
+        // Yellow Box Shadow Appearing
+        card3.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
 
-    // Yellow Box Shadow Appearing
-    card4.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
+        // Title Change Color
+        document.querySelector('.titleAppearTop p').style.color = '#fdd172'
 
-    // Title Change Color
-    document.querySelector('.titleAppearTop p').style.color = '#ff5353'
+        // Particle Change Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = '#92783f'
+        })
 
-    // Particle Change Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = '#8b2d2d'
+        // Title Appear on Hover
+        textAppearOnHover.style.opacity = 1
+        textAppearParag.innerHTML = 'Settings'
     })
 
-    // Title Appear on Hover
-    textAppearOnHover.style.opacity = 1
-    textAppearParag.innerHTML = 'Rules of DOS'
-})
+    card3.addEventListener('mouseleave', function () {
+        card3.style.top = '50%'
+        card4.style.left = '50%'
 
-card4.addEventListener('mouseleave', function () {
-    card4.style.top = '50%'
+        // Yellow Box Shadow Appearing
+        card3.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
 
-    // Yellow Box Shadow Appearing
-    card4.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
+        // Title Change to initial Color
+        document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
 
-    // Title Change to initial Color
-    document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
+        // Particle Change to initial Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = 'rgb(221, 221, 221)'
+        })
 
-    // Particle Change to initial Background
-    document.querySelectorAll('.particle').forEach(function (element) {
-        element.style.background = 'rgb(221, 221, 221)'
+        // Title Disappear on Leaving
+        textAppearOnHover.style.opacity = 0
     })
 
-    // Title Disappear on Leaving
-    textAppearOnHover.style.opacity = 0
-})
+    // Animation Card4 Hover
+    card4.addEventListener('mouseenter', function () {
+        card4.style.top = '47%'
+
+        // Yellow Box Shadow Appearing
+        card4.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6), 0 0 40px 10px rgb(255, 217, 0)'
+
+        // Title Change Color
+        document.querySelector('.titleAppearTop p').style.color = '#ff5353'
+
+        // Particle Change Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = '#8b2d2d'
+        })
+
+        // Title Appear on Hover
+        textAppearOnHover.style.opacity = 1
+        textAppearParag.innerHTML = 'Rules of DOS'
+    })
+
+    card4.addEventListener('mouseleave', function () {
+        card4.style.top = '50%'
+
+        // Yellow Box Shadow Appearing
+        card4.style.boxShadow = '-10px 15px 10px rgba(0, 0, 0, 0.6)'
+
+        // Title Change to initial Color
+        document.querySelector('.titleAppearTop p').style.color = 'rgba(0, 0, 0, 0.3)'
+
+        // Particle Change to initial Background
+        document.querySelectorAll('.particle').forEach(function (element) {
+            element.style.background = 'rgb(221, 221, 221)'
+        })
+
+        // Title Disappear on Leaving
+        textAppearOnHover.style.opacity = 0
+    })
+}
 
 
 // Card1 onClick Start Game
@@ -272,46 +273,50 @@ for(let i = 1; i <= 10; ++ i) {
 
 
 // 
-for(let i = 1; i <= 4; ++ i) {
-    if(i === 4) {
-        document.querySelector(`#startPack${i}`).addEventListener('click', function () {
-            // Play Flip Sound
-            flipCard.currentTime = 0
-            flipCard.play()
+if(deviceType === "desktop") {
+    for(let i = 1; i <= 4; ++ i) {
+        if(i === 4) {
+            document.querySelector(`#startPack${i}`).addEventListener('click', function () {
+                // Play Flip Sound
+                flipCard.currentTime = 0
+                flipCard.play()
 
-            document.querySelector(`#startPack${i}`).style.top = randomNumberInt(105, 115) + '%'
-            document.querySelector(`#startPack${i}`).style.left = -randomNumberInt(7, 25) + '%'
+                document.querySelector(`#startPack${i}`).style.top = randomNumberInt(105, 115) + '%'
+                document.querySelector(`#startPack${i}`).style.left = -randomNumberInt(7, 25) + '%'
 
-            setTimeout(function () {
-                let initialTop = 81.5
-                let j = 4
+                setTimeout(function () {
+                    let initialTop = 81.5
+                    let j = 4
 
-                let stopInterval = setInterval(function () {
-                    if(j <= 1) {
-                        clearInterval(stopInterval)
-                    }
+                    let stopInterval = setInterval(function () {
+                        if(j <= 1) {
+                            clearInterval(stopInterval)
+                        }
 
-                    document.querySelector(`#startPack${j}`).style.top = initialTop + '%'
-                    document.querySelector(`#startPack${j}`).style.left = 0
+                        document.querySelector(`#startPack${j}`).style.top = initialTop + '%'
+                        document.querySelector(`#startPack${j}`).style.left = 0
 
-                    -- j
-                    initialTop -= 0.5
-                }, 250)
-            }, 500)
-        })
-    }
-    else {
-        document.querySelector(`#startPack${i}`).addEventListener('click', function () {
-            // Play Flip Sound
-            flipCard.currentTime = 0
-            flipCard.play()
+                        -- j
+                        initialTop -= 0.5
+                    }, 250)
+                }, 500)
+            })
+        }
+        else {
+            document.querySelector(`#startPack${i}`).addEventListener('click', function () {
+                // Play Flip Sound
+                flipCard.currentTime = 0
+                flipCard.play()
 
-            document.querySelector(`#startPack${i}`).style.top = randomNumberInt(105, 115) + '%'
-            document.querySelector(`#startPack${i}`).style.left = -randomNumberInt(7, 25) + '%'
-        })
+                document.querySelector(`#startPack${i}`).style.top = randomNumberInt(105, 115) + '%'
+                document.querySelector(`#startPack${i}`).style.left = -randomNumberInt(7, 25) + '%'
+            })
+        }
     }
 }
-
+else {
+    
+}
 
 // Setting the Volume Function
 function setSoundVolume(volumeInput) {
