@@ -298,27 +298,33 @@
     
     /* Title Appearing on Hover */
     .titleGoBack {
-        bottom: 3%;
-        height: 30px;
-        width: 50%;
-        border-radius: 30px;
+        position: absolute;
+        bottom: 0;
+        top: 50%;
+        left: 0;
+        height: 70%;
+        width: 100px;
+        background: linear-gradient(0deg, transparent 10%, rgba(255, 0, 0, 0.6), transparent 90%);
+        transform: translate(30%, -50%);
     }
     
     .titleGoBack p {
-        font-size: 20px;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
     
     
     
     /* Reset Cards */
     .startPackStyle {
-        height: 45%;
-        width: 10%;
+        height: 35%;
+        width: 8%;
         position: absolute;
-        left: -2%;
         border-radius: 15px;
         border: 2px solid white;
-        transform: rotateX(50deg) rotateZ(40deg);
     }
     
     .startPackInterior {
@@ -328,20 +334,35 @@
     }
     
     #startPack1 {
-        top: 75%;
+        left: 7%;
+        top: 65%;
+        box-shadow: 0 0 10px 2px black;
+        transform: rotateX(55deg) rotateZ(60deg);
     }
     
     #startPack2 {
-        top: 75.5%;
+        left: 7%;
+        top: 65.5%;
+        box-shadow: 0 0 10px 2px black;
+        transform: rotateX(55deg) rotateZ(30deg);
     }
     
     #startPack3 {
-        top: 76%;
+        height: 30%;
+        width: 7%;
+        left: 85%;
+        top: 65%;
+        box-shadow: 0 0 10px 2px black;
+        transform: rotateX(60deg) rotateZ(-40deg);
     }
     
     #startPack4 {
-        top: 76.5%;
+        height: 30%;
+        width: 7%;
+        left: 85%;
+        top: 63.5%;
         box-shadow: 0 0 10px 2px black;
+        transform: rotateX(60deg) rotateZ(40deg);
     }
     
     
