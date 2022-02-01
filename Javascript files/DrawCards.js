@@ -53,13 +53,24 @@ function drawSomeCards() {
                 cardCreate.style.transform = 'rotateX(65deg) rotateZ(40deg)'
 
                 // Into the Player's Hand
-                setTimeout(function () {
-                    cardCreate.style.height = '27%'
-                    cardCreate.style.width = '8%'
-                    cardCreate.style.bottom = '3%'
-                    cardCreate.style.marginRight = '0'
-                    cardCreate.style.transform = 'rotateZ(0deg)'
-                }, 250)
+                if(deviceType() === "desktop") {
+                    setTimeout(function () {
+                        cardCreate.style.height = '27%'
+                        cardCreate.style.width = '8%'
+                        cardCreate.style.bottom = '3%'
+                        cardCreate.style.marginRight = '0'
+                        cardCreate.style.transform = 'rotateZ(0deg)'
+                    }, 250)
+                }
+                else {
+                    setTimeout(function () {
+                        cardCreate.style.height = '30%'
+                        cardCreate.style.width = '8%'
+                        cardCreate.style.bottom = '3%'
+                        cardCreate.style.marginRight = '0'
+                        cardCreate.style.transform = 'rotateZ(0deg)'
+                    }, 250)
+                }
 
                 // The Number of the Card
                 let numberOfCard = randomNumberInt(0, 13)

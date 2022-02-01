@@ -34,7 +34,13 @@ function putOnBoardCard(selectedCardBoard, removeFunction) {
             // Rotate Announcer Text
             let DosAnnouncer = document.querySelector('#dosAnnouncer')
            
-            DosAnnouncer.style.fontSize = '400px'
+            if(deviceType() === "desktop") {
+                DosAnnouncer.style.fontSize = '400px'
+            }
+            else {
+                DosAnnouncer.style.fontSize = '200px'
+            }
+
             DosAnnouncer.animate([
                     { 
                         transform: 'translate(-50%, -50%) rotate(30deg)' 
