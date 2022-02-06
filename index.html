@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+    <title>Dos (Card Game)</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/png" href="./Images/DOS.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./Css files/StartMenuBackground.css">
+    <link rel="stylesheet" type="text/css" href="./Css files/BackgroundGame.css">
+    <link rel="stylesheet" type="text/css" href="./Css files/PlayersCards.css">
+    <link rel="stylesheet" type="text/css" href="./Css files/ComputersCards.css">
+    <link rel="stylesheet" type="text/css" href="./Css files/DrawCards.css">
+    <link rel="stylesheet" type="text/css" href="./Css files/EndingScreen.css">
+    <link rel="stylesheet" type="text/css" href="./Css files/MobileResponsive.css">
+</head>
+
+<body>
+    <!-- Attention Phone Portrait -->
+    <div class="putLandscapeMode">
+        <p>Please put your phone into landscape mode.</p>
+    </div>
+
+
+    <!-- Black Loading Screen -->
+    <div class="loadingScreen"></div>
+    
+
+    <!-- Start Menu Background -->
+    <div class="startMenuBackground">
+        <!-- The 4 Cards -->
+        <div class="cardStyleStartMenu" id="cardStartMenu1">
+            <div class="cardStyleStartMenuInterior">
+                <p>Offline</p>
+            </div>
+        </div>
+        
+        <div class="cardStyleStartMenu" id="cardStartMenu2">
+            <div class="cardStyleStartMenuInterior">
+                <p>Online</p>
+            </div>
+        </div>
+        
+        <div class="cardStyleStartMenu" id="cardStartMenu3">
+            <div class="cardStyleStartMenuInterior">
+                <p>Option</p>
+            </div>
+        </div>
+
+        <div class="cardStyleStartMenu" id="cardStartMenu4">
+            <div class="cardStyleStartMenuInterior">
+                <p>Rules</p>
+            </div>
+        </div>
+
+        <!-- Option Box -->
+        <div class="boxBlur" id="optionBox">
+            <div class="boxContainer">
+                <div class="textOptionBoxLeft">
+                    <p>Resolution</p>
+                    <p>Quality</p>
+                    <p>Volume</p>
+                </div>
+    
+                <div class="selectVolumeBoxRight">
+                    <p>Resize the page</p>
+                    <p>Ultra high</p>
+
+                    <div class="volumeBar">
+                        <div class="cubeSound" data-cubeNumber='1'></div>
+                        <div class="cubeSound" data-cubeNumber='2'></div>
+                        <div class="cubeSound" data-cubeNumber='3'></div>
+                        <div class="cubeSound" data-cubeNumber='4'></div>
+                        <div class="cubeSound" data-cubeNumber='5'></div>
+                        <div class="cubeSound" data-cubeNumber='6'></div>
+                        <div class="cubeSound" data-cubeNumber='7'></div>
+                        <div class="cubeSound" data-cubeNumber='8'></div>
+                        <div class="cubeSound" data-cubeNumber='9'></div>
+                        <div class="cubeSound" data-cubeNumber='10'></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="titleGoBack" id="titleGoBackOption">
+                <p>Go back</p>  
+            </div>
+        </div>
+
+        <!-- Rules Box -->
+        <div class="boxBlur" id="rulesBox">
+            <div class="boxContainer">
+                <p>Each player receives 5 cards.</p>
+                <p>The starting player has to place a card of the same color or value as the card on the table. If a player has several cards of the same color or value, he may place them.</p>
+                <p>If the player cannot or doesn't want to place a card, he has to draw one from the pack.</p>
+                <p>If the value of the card on the table is 2 or 3, the next player must draw 2 or 3 cards.</p>
+                <p>The player with 2 cards in his hand will say "DOS".</p>
+                <p>The winner is the player who has no more cards in his hand.</p>
+            </div>
+            
+            <div class="titleGoBack" id="titleGoBackRules">
+                <p>Go back</p>  
+            </div>
+        </div>
+
+        <!-- Title on Top -->
+        <div class="titleAppearTop">
+            <p>DOS</p>
+
+            <div class="particle" id="particle1"></div>
+            <div class="particle" id="particle2"></div>
+            <div class="particle" id="particle3"></div>
+            <div class="particle" id="particle4"></div>
+            <div class="particle" id="particle5"></div>
+            <div class="particle" id="particle6"></div>
+            <div class="particle" id="particle7"></div>
+            <div class="particle" id="particle8"></div>
+            <div class="particle" id="particle9"></div>
+        </div>
+
+        <!-- Title Appearing on hover -->
+        <div class="titleAppear">
+            <p></p>
+        </div>
+
+        <!-- The DOS Pack -->
+        <div>
+            <div class="startPackStyle" id="startPack1">
+                <div class="startPackInterior">
+                    <img src="./Images/DOS.png">
+                </div>
+            </div>
+
+            <div class="startPackStyle" id="startPack2">
+                <div class="startPackInterior">
+                    <img src="./Images/DOS.png">
+                </div>
+            </div>
+
+            <div class="startPackStyle" id="startPack3">
+                <div class="startPackInterior">
+                    <img src="./Images/DOS.png">
+                </div>
+            </div>
+
+            <div class="startPackStyle" id="startPack4">
+                <div class="startPackInterior">
+                    <img src="./Images/DOS.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- Some decorations -->
+        <div class="decorations">
+            <div>
+                <div class="circleTopLeft"></div>
+                <div class="circleTopLeftLittle1"></div>
+                <div class="circleTopLeftLittle2"></div>
+                <div class="circleBottomRight"></div>
+                <div class="circleBottomRightLittle1"></div>
+                <div class="circleBottomRightLittle2"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Background Game -->
+    <div class="backgroundGamePhone">
+        <div class='backgroundGame'>
+            <!-- Circle Middle with Arrow -->
+            <svg id="arrowMiddle" viewBox="0 0 1060 1060" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M624.226 983.244C403.341 1029.35 182.73 910.581 99.5531 700.901C20.5502 501.799 88.1429 277.434 259.935 154.409L243.5 265.357C240.807 283.476 253.318 300.338 271.438 303.029C273.085 303.27 274.714 303.39 276.333 303.39C292.51 303.39 306.66 291.545 309.102 275.082L334.439 104.085C335.735 95.3857 333.514 86.5202 328.266 79.4584C323.01 72.3882 315.181 67.7058 306.482 66.4194L135.513 41.1369C117.116 38.444 100.532 50.9831 97.85 69.094C95.1663 87.2134 107.678 104.075 125.788 106.757L198.691 117.547C19.0319 261.171 -48.9219 506.616 37.8918 725.35C119.245 930.467 315.639 1059.48 528.829 1059.48C564.81 1059.48 601.308 1055.81 637.777 1048.19C655.711 1044.45 667.215 1026.89 663.476 1008.94C659.719 991.001 642.053 979.488 624.221 983.255L624.226 983.244ZM950.017 947.282L870.377 935.473C1043.53 790.914 1107.87 549.888 1022.44 334.683C927.355 95.0307 675.044 -40.7156 422.67 11.9009C404.735 15.6302 393.213 33.1946 396.961 51.1299C400.699 69.0828 418.282 80.6317 436.19 76.8388C657.03 30.7988 877.59 149.576 960.791 359.182C1037.28 551.87 976.486 768.221 816.843 893.496L832.363 788.73C835.055 770.611 822.544 753.749 804.424 751.057C786.379 748.402 769.443 760.885 766.761 778.996L741.424 949.937C740.129 958.635 742.341 967.501 747.597 974.563C752.835 981.633 760.664 986.334 769.381 987.62L940.312 1012.95C941.96 1013.19 943.588 1013.31 945.208 1013.31C961.384 1013.31 975.534 1001.46 977.976 985.001C980.66 966.863 968.149 950.003 950.019 947.309L950.017 947.282Z"/>
+            </svg>
+                
+            <div id="circleMiddle">
+                <object data="./Images/Polygon.svg" id="polygonMiddle"></object>
+            </div>
+
+            <!-- Circle Top Left with Snowman and Snowflakes -->
+            <object data="./Images/Snowman.svg" id="snowman"></object>
+            <object data="./Images/Snowballs.svg" id="snowballsTopLeft"></object>
+
+            <div id="circleTopLeft">
+                <object data="./Images/Polygon.svg" id="polygonTopLeft"></object>
+            </div>
+
+
+            <div>
+                <div class="snowflakeTopLeft"></div>
+                <div class="snowflakeTopLeft"></div>
+                <div class="snowflakeTopLeft"></div>
+                <div class="snowflakeTopLeft"></div>
+                <div class="snowflakeTopLeft"></div>
+            </div>
+
+            <!-- Ice Drops Effect -->
+            <div>
+                <div class="littleIceDrop"></div>
+                <div class="littleIceDrop"></div>
+                <div class="littleIceDrop"></div>
+                <div class="littleIceDrop"></div>
+                <div class="littleIceDrop"></div>
+            </div>
+
+            
+            <!-- Circle Top Right with Trees and Snowflakes -->
+            <object data="./Images/Tree.svg" id="tree"></object>
+            <object data="./Images/Snowballs.svg" id="snowballsTopRight"></object>
+
+            <div id="circleTopRight">
+                <object data="./Images/Polygon.svg" id="polygonTopRight"></object>
+            </div>
+
+            <div>
+                <div class="snowflakeTopRight"></div>
+                <div class="snowflakeTopRight"></div>
+                <div class="snowflakeTopRight"></div>
+                <div class="snowflakeTopRight"></div>
+                <div class="snowflakeTopRight"></div>
+            </div>
+                
+            <!-- Ice Drops Effect -->
+            <div>
+                <div class="littleIceDrop2"></div>
+                <div class="littleIceDrop2"></div>
+                <div class="littleIceDrop2"></div>
+                <div class="littleIceDrop2"></div>
+                <div class="littleIceDrop2"></div>
+            </div>
+
+
+            <!-- Player's Hand -->
+            <div class="playersHand"></div>
+
+
+            <!-- Computer's Hand -->
+            <div class="computersHand"></div>
+
+
+            <!-- Draw Card Pack -->
+            <div>
+                <div class="drawCardStyle" id="drawCardFirst">
+                    <div class="drawCardInterior">
+                        <img src="./Images/DOS.png">
+                    </div>
+                </div>
+                <div class="drawCardStyle" id="drawCard2"></div>
+                <div class="drawCardStyle" id="drawCard3"></div>
+                <div class="drawCardStyle" id="drawCard4"></div>
+                <div class="drawCardStyle" id="drawCard5"></div>
+                <div class="drawCardStyle" id="drawCardLast"></div>
+            </div>
+
+            
+            <!-- Dos Announcer -->
+            <p id="dosAnnouncer">DOS</p>
+        </div>
+    </div>
+
+
+    <!-- Ending Screen -->
+    <div class='endingScreen'>
+        <div class="cardStyleEnd" id="cardEnd1">
+            <div class="cardStyleEndInterior">
+                <img src='./Images/DOS.png'>
+            </div>
+        </div>
+
+        <div class="cardStyleEnd" id="cardEnd2">
+            <div class="cardStyleEndInterior">
+                <img src='./Images/DOS.png'>
+            </div>
+        </div>
+
+        <div class="cardStyleEnd" id="cardEnd3">
+            <div class="cardStyleEndInterior">
+                <img src='./Images/DOS.png'>
+            </div>
+        </div>
+
+        <div class="cardStyleEnd" id="cardEnd4">
+            <div class="cardStyleEndInterior">
+                <img src='./Images/DOS.png'>
+            </div>
+        </div>
+
+        <div class="cardStyleEnd" id="cardEnd5">
+            <div class="cardStyleEndInterior">
+                <img src='./Images/DOS.png'>
+            </div>
+        </div>
+
+        <div class="cardStyleEnd" id="cardEnd6">
+            <div class="cardStyleEndInterior">
+                <img src='./Images/DOS.png'>
+            </div>
+        </div>
+
+        <p id="announcerText">MATCH END</p>
+
+        <div class="whoWonBox">
+            <svg width="50%" viewBox="0 0 481 527" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="240.5" cy="116.5" r="116.5" fill="#4e4e4e"/>
+                <path d="M481 526.5C481 462.715 455.662 401.543 410.559 356.441C365.457 311.338 304.285 286 240.5 286C176.715 286 115.543 311.338 70.4408 356.441C25.3383 401.543 9.6312e-06 462.715 0 526.5L481 526.5Z" fill="#4e4e4e"/>
+            </svg>
+
+            <div id="star1" class="star"></div>
+            <div id="star2" class="star"></div>
+            <div id="star3" class="star"></div>
+            <div id="star4" class="star"></div>
+            <div id="star5" class="star"></div>
+            <div id="star6" class="star"></div>
+            <div id="star7" class="star"></div>
+            <div id="star8" class="star"></div>
+            <div id="star9" class="star"></div>
+
+            <div id="textBelowProfile">
+                <p>You</p>
+            </div>
+        </div>
+        
+        <div class="flexBoxButtons">
+            <div class="buttonStyle" id="buttonMainMenu">
+                <p>Menu</p>
+            </div>
+
+            <div class="buttonStyle" id="buttonReset">
+                <p>Reset</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="./Javascript files/Variables.js"></script>
+    <script type="text/javascript" src="./Javascript files/PlayersCards.js"></script>
+    <script type="text/javascript" src="./Javascript files/ComputersCards.js"></script>
+    <script type="text/javascript" src="./Javascript files/CreatingFirstCards.js"></script>
+    <script type="text/javascript" src="./Javascript files/DrawCards.js"></script>
+    <script type="text/javascript" src="./Javascript files/EndingGame.js"></script>
+    <script type="text/javascript" src="./Javascript files/HoverStartMenu.js"></script>
+</body>
+</html>
