@@ -27,7 +27,7 @@ function startGeneratingCards() {
 
     let stopInterval = setInterval(function () {
         // How many cards should be generated
-        if(howManyTimes < 3) {
+        if(howManyTimes < 5) {
             // Player's cards
             // Creating the card
             let cardCreate = document.createElement('div')
